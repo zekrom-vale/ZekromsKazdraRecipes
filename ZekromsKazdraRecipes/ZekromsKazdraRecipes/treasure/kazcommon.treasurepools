@@ -252,20 +252,6 @@
   ],
   
   // ================================
-  //          Weapon Pools
-  // ================================
-
-  "breathweapon" : [
-	[0, {
-		"pool" : [
-			{"weight" : 1, "item" : [ "electricbreath", 1]},
-			{"weight" : 1, "item" : [ "firebreath", 1]},
-			{"weight" : 1, "item" : [ "frostbreath", 1]}
-		]
-	}]
-  ],
-  
-  // ================================
   //            Costumes
   // ================================
 
@@ -277,10 +263,7 @@
         {"weight" : 0.0003, "item" : [ "comickazhead", 1]},
         {"weight" : 0.0003, "item" : [ "comickazlegs", 1]},
         {"weight" : 0.0003, "item" : [ "kazbluemask", 1]},
-        {"weight" : 0.0003, "item" : [ "kazghastlyhead", 1]},
-		{"weight" : 0.00004, "item" : "zekromhead"},
-		{"weight" : 0.00003, "item" : "zekromchest"},
-		{"weight" : 0.00003, "item" : "zekrompants"}
+        {"weight" : 0.0003, "item" : [ "kazghastlyhead", 1]}
       ]
     }]
   ],
@@ -300,79 +283,5 @@
         {"weight" : 1.0, "item" : [ "resonite", 6]}
       ]
     }]
-  ],
-  "kazblueprint" : [
-    [0, {
-      "pool" : [
-			//Materials
-		{"weight" : 1, "item" : "kazdraobservations-codex"},
-		{"weight" : 1, "item" : "kazdraorigins-codex"},
-		{"weight" : 0.6, "item" : "agatetile-recipe"},
-		{"weight" : 0.5, "item" : "coralrelief-recipe"},
-		{"weight" : 0.7, "item" : "crystalpanel-recipe"},
-		{"weight" : 0.9, "item" : "resonitethread-recipe"},
-		{"weight" : 0.7, "item" : "kazcloth-recipe"},
-		{"weight" : 0.5, "item" : "kazship1-recipe"},
-		{"weight" : 0.4, "item" : "kazship2-recipe"},
-		{"weight" : 0.6, "item" : "kazwoodflooring-recipe"},
-		{"weight" : 0.4, "item" : "swirlrelief-recipe"},
-		{"weight" : 0.5, "item" : "woodgemplatform-recipe"},
-			//Drinks
-		{"weight" : 2.5, "item" : "kahla-recipe"}
-      ]
-    }],
-	[1.9, {
-	  "pool" : [
-			//Furniture
-			//	Doors
-        {"weight" : 0.5, "item" : "crystalinedoor-recipe"},
-        {"weight" : 0.5, "item" : "crystalinedoorh-recipe"},
-        {"weight" : 0.4, "item" : "drassilgate-recipe"},
-        {"weight" : 0.4, "item" : "drassilgateh-recipe"},
-			//	Lights
-        {"weight" : 0.5, "item" : "crystallight1-recipe"},
-        {"weight" : 0.6, "item" : "glowgem-recipe"},
-        {"weight" : 0.5, "item" : "tinyglowgem-recipe"},
-			//	Storage
-		{"weight" : 0.5, "item" : "kazchest1-recipe"},
-			//	Decorative
-		{"weight" : 1.5, "item" : "kazflagprint"},
-		{"weight" : 1.8, "item" : "kazbannerprint"},
-			//Ship		
-        {"weight" : 0.2, "item" : "kazdratechstation-recipe"},
-        {"weight" : 0.2, "item" : "kazdrafuelhatch-recipe"}
-	  ]
-	}],
-	[2.9, {
-	  "pool" : [
-		//Tools
-		{"weight" : 0.7, "item" : "kazdrill-recipe"},
-		{"weight" : 0.5, "item" : "spyrodrill-recipe"},
-			//Armor
-		{"weight" : 0.6, "item" : "zekromhead-recipe"},
-		{"weight" : 0.4, "item" : "zekromchest-recipe"},
-		{"weight" : 0.6, "item" : "zekrompants-recipe"}
-	  ]
-	}],
-	[3.9, {
-	  "pool" : [
-			//Liquids
-        {"weight" : 1.0, "item" : "crystalliquefier-recipe"},
-        {"weight" : 0.2, "item" : "liquidagirezon-recipe"},
-        {"weight" : 0.2, "item" : "agirezon-recipe"},
-        {"weight" : 0.5, "item" : "liquidhiron-recipe"},
-        {"weight" : 0.5, "item" : "hiron-recipe"},
-        {"weight" : 0.4, "item" : "liquidkazein-recipe"},
-        {"weight" : 0.4, "item" : "kazein-recipe"},
-        {"weight" : 0.3, "item" : "liquidkoorium-recipe"},
-        {"weight" : 0.3, "item" : "koorium-recipe"},
-        {"weight" : 0.7, "item" : "liquidresonite-recipe"},
-        {"weight" : 0.7, "item" : "resonite-recipe"},
-        {"weight" : 0.6, "item" : "liquidzoastone-recipe"},
-        {"weight" : 0.6, "item" : "zoastone-recipe"},
-        {"weight" : 0.1, "item" : "liquidquantonium-recipe"},
-        {"weight" : 0.1, "item" : "quantonium-recipe"}
-	  ]
-	}]
   ]
 }
