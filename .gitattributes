@@ -68,4 +68,5 @@ $ cat .gitattributes
 *.material linguist-language=JSON
 *.treasurepools linguist-language=JSON
 *.vehicle linguist-language=JSON
-#biome codex config activeitem chest head legs currency item animation consumable liqitem frames liquid namesource npctype object questtemplate recipe species tech tenant material treasurepools vehicle 
+#biome codex config activeitem chest head legs currency item animation consumable liqitem frames liquid namesource npctype object questtemplate recipe species tech tenant material treasurepools vehicle
+#*.biome; *.codex; *.config; *.activeitem; *.chest; *.head; *.legs; *.currency; *.item; *.animation; *.consumable; *.liqitem; *.frames; *.liquid; *.namesource; *.npctype; *.object; *.questtemplate; *.recipe; *.species; *.tech; *.tenant; *.material; *.treasurepools; *.vehicle
