@@ -18,14 +18,14 @@
 
   "inventoryIcon" : "defaulticon.png",
   "orientations" : [
-    {
-      "image" : "spawnerkazdraguard.png:<frame>",
-      "imagePosition" : [-8, -8],
+	{
+	  "image" : "spawnerkazdraguard.png:<frame>",
+	  "imagePosition" : [-8, -8],
 	  "animationCycle" : 1.1,
-      "frames" : 4,
-      "spaceScan" : 0.1,
-      "anchors" : [ "bottom" ]
-    }
+	  "frames" : 4,
+	  "spaceScan" : 0.1,
+	  "anchors" : [ "bottom" ]
+	}
   ],
 
   "scripts" : [ "/objects/spawner/spawners/spawner.lua" ],
@@ -35,21 +35,21 @@
   "animation" : "/objects/spawner/spawners/spawner4.animation",
 
   "animationParts" : {
-    "switch" : "spawnerkazdraguard.png:0"
+	"switch" : "spawnerkazdraguard.png:0"
   },
   
   "inputNodes" : [ ],
   "outputNodes" : [ ],
 
   "spawner" : {
-    "searchRadius" : 32.0,
-    "npcSpeciesOptions" : [ "kazdra" ],
-    "npcTypeOptions" : [ "guard" ],
-    "npcParameterOptions" : [
-      {
-        "dropPools" : [ ]
-      }
-    ]
+	"searchRadius" : 32.0,
+	"npcSpeciesOptions" : [ "kazdra" ],
+	"npcTypeOptions" : [ "guard" ],
+	"npcParameterOptions" : [
+	  {
+		"dropPools" : [ ]
+	  }
+	]
   }
 
 }

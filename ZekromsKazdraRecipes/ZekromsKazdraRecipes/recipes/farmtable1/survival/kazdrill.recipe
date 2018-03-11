@@ -7,8 +7,8 @@
 	{ "item" : "kazship2", "count" : 20 }
   ],
   "output" : {
-    "item" : "kazdrill",
-    "count" : 1
+	"item" : "kazdrill",
+	"count" : 1
   },
   "groups" : [ "craftingfarm", "survival" ]
 }

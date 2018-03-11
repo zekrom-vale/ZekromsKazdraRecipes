@@ -1,11 +1,11 @@
 {
   "input" : [
-    { "item" : "resonite", "count" : 2 },
-    { "item" : "kazwoodflooring", "count" : 4 }
+	{ "item" : "resonite", "count" : 2 },
+	{ "item" : "kazwoodflooring", "count" : 4 }
   ],
   "output" : {
-    "item" : "crystallight1",
-    "count" : 4
+	"item" : "crystallight1",
+	"count" : 4
   },
   "groups" : [ "craftingfurniture", "lights", "all" ]
 }

@@ -1,6 +1,6 @@
 {
   "input" : [
-    { "item" : "resonite", "count" : 20 },
+	{ "item" : "resonite", "count" : 20 },
 	{ "item" : "zoastone", "count" : 12 },
 	{ "item" : "toxicwaste", "count" : 50 },
 	{ "item" : "toxicwastebarrel", "count" : 8 },
@@ -10,8 +10,8 @@
 	{ "item" : "fleshstrand", "count" : 75 }
   ],
   "output" : {
-    "item" : "quantonium",
-    "count" : 1
+	"item" : "quantonium",
+	"count" : 1
   },
   "groups" : [ "craftingfurnace3", "ingredients", "all" ]
 }

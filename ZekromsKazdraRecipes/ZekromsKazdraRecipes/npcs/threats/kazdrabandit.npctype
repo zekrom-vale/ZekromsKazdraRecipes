@@ -7,38 +7,38 @@
   "dropPools" : [ "money" ],
 
   "scriptConfig" : {
-    "behaviorConfig" : {
-      "friendlyNpcTypes" : ["crewmemberoutlaw"]
-    },
+	"behaviorConfig" : {
+	  "friendlyNpcTypes" : ["crewmemberoutlaw"]
+	},
 
-    "dialog" : {
-      "attack" : {
-        "default" : {
-          "default" : [
-            "Attack!"
-          ]
-        },
-        "kazdra" : {
-          "default" : [
-            "You've never faced a bandit like me!",
-            "You may have fought bandits before, but you haven't fought ME!",
-            "You're gonna leave here full of holes!",
-            "Are you here to challenge me? Do you even know who I am?!"
-          ]
-        }
-      }
-    }
+	"dialog" : {
+	  "attack" : {
+		"default" : {
+		  "default" : [
+			"Attack!"
+		  ]
+		},
+		"kazdra" : {
+		  "default" : [
+			"You've never faced a bandit like me!",
+			"You may have fought bandits before, but you haven't fought ME!",
+			"You're gonna leave here full of holes!",
+			"Are you here to challenge me? Do you even know who I am?!"
+		  ]
+		}
+	  }
+	}
   },
 
   "items" : {
-    "override" : [
-      [0, [
-          {
-          "head" : [ 
+	"override" : [
+	  [0, [
+		  {
+		  "head" : [ 
 			"bandithat2",
 			"inviskazhead"
 		  ],
-          "chest" : [
+		  "chest" : [
 			{ "name" : "colourfulchest", "parameters" : { "colorIndex" : 1 } },
 			{ "name" : "colourfulchest", "parameters" : { "colorIndex" : 2 } },
 			{ "name" : "colourfulchest", "parameters" : { "colorIndex" : 3 } },
@@ -64,7 +64,7 @@
 			{ "name" : "thiefshirt", "parameters" : { "colorIndex" : 11 } },
 			{ "name" : "thiefshirt", "parameters" : { "colorIndex" : 12 } }
 		  ],
-          "legs" : [ 
+		  "legs" : [ 
 			{ "name" : "thiefskals", "parameters" : { "colorIndex" : 1 } },
 			{ "name" : "thiefskals", "parameters" : { "colorIndex" : 2 } },
 			{ "name" : "thiefskals", "parameters" : { "colorIndex" : 3 } },
@@ -79,7 +79,7 @@
 			{ "name" : "thiefskals", "parameters" : { "colorIndex" : 12 } },
 			"inviskazpants"
 		  ],
-            "primary" : [ 
+			"primary" : [ 
 				"npcpetcapturepod",
 				"kazdratier1shortsword",
 				"kazdratier2shortsword",
@@ -101,7 +101,7 @@
 				"kazdratier3broadsword",
 				"kazdratier4broadsword"
 			],
-            "sheathedprimary" : [ 
+			"sheathedprimary" : [ 
 				"kazneedle1",
 				"npcsniperrifle",
 				"kazdratier1dagger",
@@ -109,22 +109,22 @@
 				"kazdratier3dagger",
 				"kazdratier4dagger"
 			]
-          }
-        ] ]
-    ]
+		  }
+		] ]
+	]
   },
 
-  "statusControllerSettings" : {    
-    "stats" : {
-      "maxHealth" : {
-        "baseValue" : 150.0
-      },
-      "powerMultiplier" : {
-        "baseValue" : 0.8
-      },
-      "protection" : {
-        "baseValue" : 0.8
-      }
-    }
+  "statusControllerSettings" : {	
+	"stats" : {
+	  "maxHealth" : {
+		"baseValue" : 150.0
+	  },
+	  "powerMultiplier" : {
+		"baseValue" : 0.8
+	  },
+	  "protection" : {
+		"baseValue" : 0.8
+	  }
+	}
   }
 }

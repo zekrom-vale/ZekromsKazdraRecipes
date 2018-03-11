@@ -24,30 +24,30 @@
   "tooltipKind" : "seed",
   "largeImage" : "rootpopseed.png:default.2.4",
   "orientations" : [
-    {
-      "dualImage" : "rootpopseed.png:<color>.<stage>.<alt>",
-      "imagePosition" : [0, 0],
-      "frames" : 1,
-      "animationCycle" : 0.5,
+	{
+	  "dualImage" : "rootpopseed.png:<color>.<stage>.<alt>",
+	  "imagePosition" : [0, 0],
+	  "frames" : 1,
+	  "animationCycle" : 0.5,
 
-      "spaceScan" : 0.1,
-      "requireTilledAnchors" : true,
-      "anchors" : [ "bottom" ]
+	  "spaceScan" : 0.1,
+	  "requireTilledAnchors" : true,
+	  "anchors" : [ "bottom" ]
 
-    }
+	}
   ],
 
   "stages" : [
-    {
-      "duration" : [220, 220]
-    },
-    {
-      "duration" : [220, 220]
-    },
-    {
-      "alts" : 5,
-      "harvestPool" : "rootpopHarvest"
-    }
+	{
+	  "duration" : [220, 220]
+	},
+	{
+	  "duration" : [220, 220]
+	},
+	{
+	  "alts" : 5,
+	  "harvestPool" : "rootpopHarvest"
+	}
   ],
   
   "consumeSoilMoisture" : false

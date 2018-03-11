@@ -1,10 +1,10 @@
 {
   "input" : [
-    { "item" : "rootpop", "count" : 2 }
+	{ "item" : "rootpop", "count" : 2 }
   ],
   "output" : {
-    "item" : "kahla",
-    "count" : 1
+	"item" : "kahla",
+	"count" : 1
   },
   "groups" : [ "craftingfood", "drinks" ]
 }
