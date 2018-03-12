@@ -2,8 +2,7 @@
 "op":"replace",
 "path":"/tenants/0/type",
 "value":"generictenant"
-},
-{
+},{
 "op":"add",
 "path":"/tenants/1",
 "value":{
@@ -12,8 +11,7 @@
 	  "type":"merchant",
 	  "overrides":{}
 	}
-},
-{
+},{
 "op":"add",
 "path":"/tenants/2",
 "value":{

@@ -3,8 +3,7 @@
 "op":"add",
 "path":"/scriptConfig/merchant/categories/kazdra",
 "value":["basicmerchant", "randomguns", "randomswords", "humaningredients" ]
-},
-{
+},{
 "op":"add",
 "path":"/items/kazdra",
 "value":[[0,[

@@ -1,5 +1,4 @@
-[{"op":"test", "path":"/manytabs", "value":true},
-{
+[{"op":"test", "path":"/manytabs", "value":true},{
 "op":"add",
 "path":"/paneLayout/speciesTabs/buttons/-",
 "value":{

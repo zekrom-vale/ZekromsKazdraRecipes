@@ -4,18 +4,15 @@
 "op":"add",
 "path":"/diggingTool/3/1/pool/-",
 "value":{"weight":0.2, "item":"spyrodrill"}
-},
-{
+},{
 "op":"add",
 "path":"/diggingTool/4/1/pool/-",
 "value":{"weight":0.4, "item":"spyrodrill"}
-},
-{
+},{
 "op":"add",
 "path":"/diggingTool/5/1/pool/-",
 "value":{"weight":0.6, "item":"spyrodrill"}
-},
-{
+},{
 "op":"add",
 "path":"/diggingTool/5/1/pool/-",
 "value":{"weight":0.8, "item":"spyrodrill"}
@@ -31,18 +28,15 @@
 "op":"add",
 "path":"/seed/2/1/pool/-",
 "value":{"weight":2.0, "item":"hironseed"}
-},
-{
+},{
 "op":"add",
 "path":"/seed/2/1/pool/-",
 "value":{"weight":3.5, "item":"resoniteseed"}
-},
-{
+},{
 "op":"add",
 "path":"/seed/2/1/pool/-",
 "value":{"weight":2.0, "item":"zoastoneseed"}
-},
-{
+},{
 "op":"add",
 "path":"/seed/2/1/pool/-",
 "value":{"weight":3.0, "item":"rootpopseed"}
@@ -52,13 +46,11 @@
 "op":"add",
 "path":"/costume/0/1/pool/-",
 "value":{"weight":0.0006, "item":"kazbluemask"}
-},
-{
+},{
 "op":"add",
 "path":"/costume/0/1/pool/-",
 "value":{"weight":0.0005, "item":"kazghastly"}
-},
-{
+},{
 "op":"add",
 "path":"/kazdragem",
 "value":[[0,
