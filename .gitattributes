@@ -1,5 +1,5 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+* text=lf
 
 #JSON
 *.biome text eol=lf
@@ -27,6 +27,7 @@
 *.material text eol=lf
 *.treasurepools text eol=lf
 *.vehicle text eol=lf
+*.patch text eol=lf
 
 # Custom for Visual Studio
 *.cs     diff=csharp
