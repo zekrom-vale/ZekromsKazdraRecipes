@@ -1,11 +1,11 @@
 {
-  "input" : [
-	{ "item" : "koorium", "count" : 4 },
-	{ "item" : "kazein", "count" : 2 }
+  "input":[
+	{"item":"koorium", "count":4},
+	{"item":"kazein", "count":2}
   ],
-  "output" : {
-	"item" : "swirlrelief",
-	"count" : 10
-  },
-  "groups" : [ "craftingfurniture", "materials", "all" ]
+  "output":{
+	"item":"swirlrelief",
+	"count":10
+ },
+  "groups":["craftingfurniture", "materials", "all" ]
 }
