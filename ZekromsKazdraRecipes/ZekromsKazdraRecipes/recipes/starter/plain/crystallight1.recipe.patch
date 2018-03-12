@@ -1,6 +1,6 @@
 [
 {
-"op" : "remove",
-"path" : "/groups"
+"op":"remove",
+"path":"/groups"
 }
 ]

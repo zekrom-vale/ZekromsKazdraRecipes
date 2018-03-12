@@ -1,5 +1,5 @@
 [{
-"op" : "add",
-"path" : "/spawner/npcSpeciesOptions/-",
-"value" : "kazdra"
+"op":"add",
+"path":"/spawner/npcSpeciesOptions/-",
+"value":"kazdra"
 }]

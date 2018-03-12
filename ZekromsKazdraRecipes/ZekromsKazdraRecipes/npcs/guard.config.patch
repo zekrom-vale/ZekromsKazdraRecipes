@@ -1,10 +1,10 @@
 [
-{ "op" : "add",
-"path" : "/hail/kazdra",
-"value" : {
-     "default" : [
-       "Hi! (Debug)"
-     ]
-   }
+{"op":"add",
+"path":"/hail/kazdra",
+"value":{
+	 "default":[
+	   "Hi! (Debug)"
+	 ]
+  }
 }
 ]

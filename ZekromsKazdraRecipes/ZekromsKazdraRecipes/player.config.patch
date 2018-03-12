@@ -1,19 +1,19 @@
 [{
-"op" : "add",
-"path" : "/defaultBlueprints/tier1/-",
-"value" : { "item" : "spawnerkazdra" }
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"spawnerkazdra"}
 },{
-"op" : "add",
-"path" : "/defaultBlueprints/tier1/-",
-"value" : { "item" : "spawnerkazdramerchant" }
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"spawnerkazdramerchant"}
 },
 {
-"op" : "add",
-"path" : "/defaultBlueprints/tier1/-",
-"value" : { "item" : "spawnerkazdraguard" }
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"spawnerkazdraguard"}
 },
-{ 
-	"op" : "replace",
-	"path" : "/defaultCodexes/kazdra/3",
-	"value" : "kazdraobservations"
+{
+	"op":"replace",
+	"path":"/defaultCodexes/kazdra/3",
+	"value":"kazdraobservations"
 }]

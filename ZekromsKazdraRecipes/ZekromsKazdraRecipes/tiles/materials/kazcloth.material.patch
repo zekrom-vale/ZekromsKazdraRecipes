@@ -1,5 +1,5 @@
 [{
-"op" : "replace",
-"path" : "/footstepSound",
-"value" : "/sfx/blocks/footstep_sand.ogg"
+"op":"replace",
+"path":"/footstepSound",
+"value":"/sfx/blocks/footstep_sand.ogg"
 }]

@@ -1,5 +1,5 @@
-[ {
-"op" : "add",
-"path" : "/-",
-"value" : { "price" : 55 }
-} ]
+[{
+"op":"add",
+"path":"/-",
+"value":{"price":55}
+}]
