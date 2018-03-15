@@ -1,7 +1,7 @@
 {
   "input":[
-	{"item":"liquidresonite", "count":20},
-	{"item":"liquidzoastone", "count":20},
+	{"item":"zoastone", "count":3},
+	{"item":"resonite", "count":3},
 	{"item":"ironbar", "count":2}
   ],
   "output":{

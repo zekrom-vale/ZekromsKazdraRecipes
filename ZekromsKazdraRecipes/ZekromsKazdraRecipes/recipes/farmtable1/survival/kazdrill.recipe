@@ -1,14 +1,11 @@
 {
-  "input":[
-	{"item":"resonite", "count":4},
-	{"item":"liquidresonite", "count":20},
-	{"item":"liquidkazein", "count":45},
-	{"item":"crystalpanel", "count":30},
-	{"item":"kazship2", "count":20}
-  ],
-  "output":{
-	"item":"kazdrill",
-	"count":1
- },
-  "groups":["craftingfarm", "survival" ]
+"input":[
+	{"item":"resonite","count":4},
+	{"item":"resonite","count":3},
+	{"item":"kazein","count":6},
+	{"item":"crystalpanel","count":30},
+	{"item":"kazship2","count":20}
+],
+"output":{"item":"kazdrill","count":1},
+"groups":["craftingfarm", "survival"]
 }

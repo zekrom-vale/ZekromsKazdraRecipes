@@ -1,12 +1,9 @@
 {
-  "input":[
+"input":[
 	{"item":"kazein", "count":1},
-	{"item":"liquidresonite", "count":15},
+	{"item":"resonite", "count":2},
 	{"item":"cobblestonematerial", "count":2}
-  ],
-  "output":{
-	"item":"kazswitch",
-	"count":1
- },
-  "groups":["craftingwiring", "switches" ]
+],
+"output":{"item":"kazswitch","count":1},
+"groups":["craftingwiring", "switches"]
 }

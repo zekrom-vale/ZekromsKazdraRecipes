@@ -1,11 +1,8 @@
 {
-  "input":[
+"input":[
 	{"item":"resonite", "count":4},
 	{"item":"cobblestonematerial", "count":4}
-  ],
-  "output":{
-	"item":"crystalinedoor",
-	"count":1
- },
-  "groups":["craftingfurniture", "doors", "all" ]
+],
+"output":{"item":"crystalinedoor","count":1},
+"groups":["craftingfurniture", "doors", "all"]
 }

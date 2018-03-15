@@ -1,7 +1,7 @@
 {
   "input":[
 	{"item":"kazwoodflooring", "count":5},
-	{"item":"liquidresonite", "count":20}
+	{"item":"resonite", "count":3}
   ],
   "output":{
 	"item":"woodgemplatform",

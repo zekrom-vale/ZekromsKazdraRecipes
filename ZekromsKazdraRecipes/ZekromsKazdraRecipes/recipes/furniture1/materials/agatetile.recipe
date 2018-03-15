@@ -1,10 +1,7 @@
 {
-  "input":[
-	{"item":"liquidagirezon", "count":30}
-  ],
-  "output":{
-	"item":"agatetile",
-	"count":10
- },
-  "groups":["craftingfurniture", "materials", "all" ]
+"input":[
+	{"item":"agirezon", "count":4}
+],
+"output":{"item":"agatetile","count":10},
+"groups":["craftingfurniture", "materials", "all" ]
 }

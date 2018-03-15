@@ -1,6 +1,6 @@
 {
   "input":[
-	{"item":"liquidresonite", "count":10},
+	{"item":"resonite", "count":2},
 	{"item":"ironbar", "count":2}
   ],
   "output":{
