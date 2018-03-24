@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "titaniumbar", "count" : 22 }
+  ],
+  "output" : {
+    "item" : "tyrfing",
+    "count" : 1
+  },
+  "groups" : [ "craftinganvil2", "weapons", "all" ]
+}

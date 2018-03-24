@@ -8,15 +8,6 @@
 "value":{
 	  "spawn":"npc",
 	  "species":"kazdra",
-	  "type":"merchant",
-	  "overrides":{}
-	}
-},{
-"op":"add",
-"path":"/tenants/2",
-"value":{
-	  "spawn":"npc",
-	  "species":"kazdra",
 	  "type":"guard",
 	  "overrides":{}
 	}

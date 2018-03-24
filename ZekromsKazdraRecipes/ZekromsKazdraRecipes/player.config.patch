@@ -11,7 +11,7 @@
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"spawnerkazdraguard"}
 },{
-	"op":"replace",
-	"path":"/defaultCodexes/kazdra/3",
-	"value":"kazdraobservations"
+"op":"replace",
+"path":"/defaultCodexes/kazdra/3",
+"value":"kazdraobservations"
 }]
