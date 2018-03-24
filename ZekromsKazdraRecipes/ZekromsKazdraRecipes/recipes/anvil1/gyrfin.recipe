@@ -1,9 +1,9 @@
 {
-"input":[
+"input" : [
 	{"item":"resonite", "count":20},
 	{"item":"hiron", "count":40},
 	{"item":"crystalpanel", "count":10}
 ],
-"output":{"item":"ktestbroadsword","count":1},
-"groups":["craftinganvil", "weapons", "all" ]
+"output":{"item" : "gyrfin","count" : 1},
+"groups":["craftinganvil", "weapons", "all"]
 }

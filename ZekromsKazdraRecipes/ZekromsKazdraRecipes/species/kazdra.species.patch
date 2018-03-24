@@ -62,6 +62,24 @@
 "op":"add",
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"zoastone"}
+},
+//Tester weapons
+{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"gyrfin"}
+},{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"ktestbroadsword"}
+},{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"lyrgon"}
+},{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"tyrfing"}
 }
 
 //Weapon teer 6+ fix (can't test easily)
