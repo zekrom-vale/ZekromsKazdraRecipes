@@ -12,6 +12,6 @@
 "value":{"item":"spawnerkazdraguard"}
 },{
 "op":"replace",
-"path":"/defaultCodexes/kazdra/3",
+"path":"/defaultCodexes/kazdra/2",
 "value":"kazdraobservations"
 }]

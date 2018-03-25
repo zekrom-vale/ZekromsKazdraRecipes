@@ -1,10 +1,4 @@
-[//*Test
-{
-"op":"replace",
-"path":"/metadata/anchor",
-"value":[]
-},
-//*Anchor
+[//Anchor
 {
 "op":"add",
 "path":"/metadata/anchor/-",
