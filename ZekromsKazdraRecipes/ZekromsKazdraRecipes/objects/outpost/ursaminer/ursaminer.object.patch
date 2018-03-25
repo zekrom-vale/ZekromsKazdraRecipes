@@ -20,5 +20,5 @@
 "path":"/interactData/items/-",
 "value":{"item":{"name":"koorium"}}
 }
-//,{"op":"add", "path":"/interactData/items/-", "value":{"item":{"name":"agirezon"}}}
+//,{"op":"add","path":"/interactData/items/-","value":{"item":{"name":"agirezon"}}}
 ]

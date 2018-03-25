@@ -1,13 +1,7 @@
 {
 "input":[
-	{"item":"diamond","count":1},
-	{"item":"resonite","count":4},
-	{"item":"resonite","count":4},
-	{"item":"hiron","count":6},
-	{"item":"kazein","count":5},
-	{"item":"crystalpanel","count":10},
-	{"item":"kazship2","count":10}
+	{"item":"diamond","count":1},{"item":"resonite","count":4},{"item":"resonite","count":4},{"item":"hiron","count":6},{"item":"kazein","count":5},{"item":"crystalpanel","count":10},{"item":"kazship2","count":10}
 ],
 "output":{"item":"spyrodrill","count":1},
-"groups":["craftingfarm", "survival"]
+"groups":["craftingfarm","survival"]
 }

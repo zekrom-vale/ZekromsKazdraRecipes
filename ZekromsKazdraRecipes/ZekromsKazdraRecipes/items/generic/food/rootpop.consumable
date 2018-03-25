@@ -12,12 +12,12 @@
   "builder":"/items/buildscripts/buildfood.lua",
   "maxStack":100,
   "effects":[[
-	 {
+	{
 		"effect":"regeneration1",
 		"duration":10
-	 }
-	] ],
+	}
+	]],
   "blockingEffects":[
 	"wellfed"
-  ]
+]
 }

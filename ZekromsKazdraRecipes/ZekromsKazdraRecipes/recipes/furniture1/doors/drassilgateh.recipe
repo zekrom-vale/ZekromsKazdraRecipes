@@ -1,8 +1,7 @@
 {
 "input":[
-	{"item":"hiron", "count":4},
-	{"item":"kazwoodflooring", "count":4}
+	{"item":"hiron","count":4},{"item":"kazwoodflooring","count":4}
 ],
 "output":{"item":"drassilgateh","count":1},
-"groups":["craftingfurniture", "doors", "all" ]
+"groups":["craftingfurniture","doors","all"]
 }

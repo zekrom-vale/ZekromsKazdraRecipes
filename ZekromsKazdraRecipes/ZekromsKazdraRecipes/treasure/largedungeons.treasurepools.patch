@@ -1,9 +1,9 @@
 [{
 "op":"add",
 "path":"/aviannativevillageLore/0/1/pool/-",
-"value":{"weight":0.3, "item":"kazdraobservations-codex"}
+"value":{"weight":0.3,"item":"kazdraobservations-codex"}
 },{
 "op":"add",
 "path":"/avianairshipLore/0/1/pool/-",
-"value":{"weight":0.3, "item":"kazdraobservations-codex"}
+"value":{"weight":0.3,"item":"kazdraobservations-codex"}
 }]

@@ -17,7 +17,7 @@
 }
 ],
 "rent":{
-	"periodRange":[900.0, 1850.0],
+	"periodRange":[900.0,1850.0],
 	"pool":"merchantGift"
 }
 }

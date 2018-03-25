@@ -1,7 +1,7 @@
 {
 "input":[
-	{"item":"agirezon", "count":4}
+	{"item":"agirezon","count":4}
 ],
 "output":{"item":"agatetile","count":10},
-"groups":["craftingfurniture", "materials", "all" ]
+"groups":["craftingfurniture","materials","all"]
 }

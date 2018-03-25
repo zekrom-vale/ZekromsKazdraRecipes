@@ -73,9 +73,7 @@
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"kazdrastarter"}
 }
-
 //Weapon teer 6+ fix (can't test easily)
-
 ,{
 "op":"add",
 "path":"/defaultBlueprints/tier1/-",

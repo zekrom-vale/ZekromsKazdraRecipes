@@ -1,10 +1,9 @@
 [{
 "op":"replace",
-"path": "/apexDescription",
-"value":"Pretty crystals that emit light, what more is there to say?"
-},
-{
+"path":"/apexDescription",
+"value":"Pretty crystals that emit light,what more is there to say?"
+},{
 "op":"replace",
 "path":"avianDescription",
-"value":"Unlike our people, the Kazdra seem to leave some crystals as natural light sources."
+"value":"Unlike our people,the Kazdra seem to leave some crystals as natural light sources."
 }]

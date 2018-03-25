@@ -1,9 +1,7 @@
 {
-"input" : [
-	{"item":"resonite", "count":20},
-	{"item":"hiron", "count":40},
-	{"item":"crystalpanel", "count":10}
+"input":[
+	{"item":"resonite","count":20},{"item":"hiron","count":40},{"item":"crystalpanel","count":10}
 ],
-"output" : {"item" : "lyrgon","count" : 1},
-"groups":["craftinganvil", "weapons", "all" ]
+"output":{"item":"lyrgon","count":1},
+"groups":["craftinganvil","weapons","all"]
 }

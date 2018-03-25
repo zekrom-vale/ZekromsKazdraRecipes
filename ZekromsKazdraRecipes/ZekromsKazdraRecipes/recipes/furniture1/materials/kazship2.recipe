@@ -1,12 +1,10 @@
 {
   "input":[
-	{"item":"zoastone", "count":3},
-	{"item":"resonite", "count":3},
-	{"item":"ironbar", "count":2}
-  ],
+	{"item":"zoastone","count":3},{"item":"resonite","count":3},{"item":"ironbar","count":2}
+],
   "output":{
 	"item":"kazship2",
 	"count":10
- },
-  "groups":["craftingfurniture", "materials", "all" ]
+},
+  "groups":["craftingfurniture","materials","all"]
 }

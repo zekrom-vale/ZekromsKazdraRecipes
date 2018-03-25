@@ -2,11 +2,11 @@
 "op":"add",
 "path":"/0/1/-",
 "value":[
-	 ["generic" ],
-	 {
+	["generic"],
+	{
 		"name":"bandits",
 		"species":"kazdra",
 		"typeName":"kazdrabandit"
-	 }
+	}
 	]
 }]

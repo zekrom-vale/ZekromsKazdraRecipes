@@ -2,7 +2,7 @@
 "op":"add",
 "path":"/items/kazdra",
 "value":[
-	 [0,[
+	[0,[
 		{
 		  "head":[{"name":"kazdratier1head"}],
 		  "chest":[{"name":"kazdratier1chest"}],
@@ -18,8 +18,7 @@
 			  "kazdratier1hammer",
 			  "kazdratier1broadsword"
 			]
-		},
-		{
+		},{
 		  "head":[{"name":"kazdratier2head"}],
 		  "chest":[{"name":"kazdratier2chest"}],
 		  "legs":[{"name":"kazdratier2pants"}],
@@ -34,8 +33,7 @@
 			  "kazdratier2hammer",
 			  "kazdratier2broadsword"
 			]
-		},
-		{
+		},{
 		  "head":[{"name":"kazdratier3head"}],
 		  "chest":[{"name":"kazdratier3chest"}],
 		  "legs":[{"name":"kazdratier3pants"}],
@@ -50,8 +48,7 @@
 			  "kazdratier3hammer",
 			  "kazdratier3broadsword"
 			]
-		},
-		{
+		},{
 		  "head":[{"name":"kazdratier4head"}],
 		  "chest":[{"name":"kazdratier4chest"}],
 		  "legs":[{"name":"kazdratier4pants"}],
@@ -67,6 +64,6 @@
 			  "kazdratier4broadsword"
 			]
 		}
-	  ]]
+	]]
 	]
 }]

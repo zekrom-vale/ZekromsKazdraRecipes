@@ -2,8 +2,7 @@
 "op":"replace",
 "path":"/glitchDescription",
 "value":"Interested. It would seem that this crystal could be refined into fuel. If only I knew how."
-},
-{
+},{
 "op":"replace",
 "path":"/kazdraDescription",
 "value":"These singing crystals have provided my race with energy for generations. The refinement process is a closely guarded secret."

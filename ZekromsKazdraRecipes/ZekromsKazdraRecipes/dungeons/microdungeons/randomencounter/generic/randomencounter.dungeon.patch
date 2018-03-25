@@ -24,22 +24,19 @@
 "path":"/metadata/anchor/-",
 "value":"smallhouseKazCiv"
 },
-//Tiles
-//000cX1 or 000c00
+//Tiles	0x000cX1 /0x000c00
 {
 "op":"add",
 "path":"/tiles/-",
 "value":{
-	"value":[0, 12, 0, 255],
+	"value":[0,12,0,255],
 	"comment":"kazdra bandit npc",
 	"brush":[["npc",
 	{
-		"kind" : "npc",
-		"species" : "kazdra",
-		"typeName" : "bandit",
-		"parameters" : {
-			"persistent" : true
-		}
+		"kind":"npc",
+		"species":"kazdra",
+		"typeName":"bandit",
+		"parameters":{"persistent":true}
 	}
 	]]
 }
@@ -47,16 +44,14 @@
 "op":"add",
 "path":"/tiles/-",
 "value":{
-	"value":[0, 12, 17, 255],
+	"value":[0,12,17,255],
 	"comment":"kazdra merchant npc",
 	"brush":[["npc",
 	{
-		"kind" : "npc",
-		"species" : "kazdra",
-		"typeName" : "merchant",
-		"parameters" : {
-			"persistent" : true
-		}
+		"kind":"npc",
+		"species":"kazdra",
+		"typeName":"merchant",
+		"parameters":{"persistent":true}
 	}
 	]]
 }
@@ -64,16 +59,14 @@
 "op":"add",
 "path":"/tiles/-",
 "value":{
-	"value":[0, 12, 33, 255],
+	"value":[0,12,33,255],
 	"comment":"kazdra gem merchant npc",
 	"brush":[["npc",
 	{
-		"kind" : "npc",
-		"species" : "kazdra",
-		"typeName" : "kazdragem",
-		"parameters" : {
-			"persistent" : true
-		}
+		"kind":"npc",
+		"species":"kazdra",
+		"typeName":"kazdragem",
+		"parameters":{"persistent":true}
 	}
 	]]
 }
@@ -81,16 +74,14 @@
 "op":"add",
 "path":"/tiles/-",
 "value":{
-	"value":[0, 12, 49, 255],
+	"value":[0,12,49,255],
 	"comment":"kazdra pub merchant npc",
 	"brush":[["npc",
 	{
-		"kind" : "npc",
-		"species" : "kazdra",
-		"typeName" : "kazdrapub",
-		"parameters" : {
-			"persistent" : true
-		}
+		"kind":"npc",
+		"species":"kazdra",
+		"typeName":"kazdrapub",
+		"parameters":{"persistent":true}
 	}
 	]]
 }
@@ -98,16 +89,14 @@
 "op":"add",
 "path":"/tiles/-",
 "value":{
-	"value":[0, 12, 65, 255],
+	"value":[0,12,65,255],
 	"comment":"kazdra villager npc",
 	"brush":[["npc",
 	{
-		"kind" : "npc",
-		"species" : "kazdra",
-		"typeName" : "villager",
-		"parameters" : {
-			"persistent" : true
-		}
+		"kind":"npc",
+		"species":"kazdra",
+		"typeName":"villager",
+		"parameters":{"persistent":true}
 	}
 	]]
 }

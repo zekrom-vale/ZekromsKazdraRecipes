@@ -1,11 +1,11 @@
-[{"op":"test", "path":"/manytabs", "value":true},{
+[{"op":"test","path":"/manytabs","value":true},{
 "op":"add",
 "path":"/paneLayout/speciesTabs/buttons/-",
 "value":{
-	"position":[4, 5],
+	"position":[4,5],
 	"baseImage":"/interface/codex/tab_kazdra.png",
 	"baseImageChecked":"/interface/codex/tab_kazdra_select.png",
-	"pressedOffset":[0, 0],
+	"pressedOffset":[0,0],
 	"data":{"species":"kazdra"}
 	}
 }]
