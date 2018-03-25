@@ -1,4 +1,10 @@
-[//Anchor
+[//*Test
+{
+"op":"replace",
+"path":"/metadata/anchor",
+"value":[]
+},
+//*Anchor
 {
 "op":"add",
 "path":"/metadata/anchor/-",
@@ -6,10 +12,26 @@
 },{
 "op":"add",
 "path":"/metadata/anchor/-",
-"value":"tradingcaravanKaz"
+"value":"caravanKaz"
+},{
+"op":"add",
+"path":"/metadata/anchor/-",
+"value":"KazGem"
+},{
+"op":"add",
+"path":"/metadata/anchor/-",
+"value":"KazPub"
+},{
+"op":"add",
+"path":"/metadata/anchor/-",
+"value":"smallhouseKaz"
+},{
+"op":"add",
+"path":"/metadata/anchor/-",
+"value":"smallhouseKazCiv"
 },
 //Tiles
-//12=c
+//000cX1 or 000c00
 {
 "op":"add",
 "path":"/tiles/-",
@@ -48,7 +70,7 @@
 "op":"add",
 "path":"/tiles/-",
 "value":{
-	"value":[0, 12, 22, 255],
+	"value":[0, 12, 33, 255],
 	"comment":"kazdra gem merchant npc",
 	"brush":[["npc",
 	{
@@ -65,13 +87,30 @@
 "op":"add",
 "path":"/tiles/-",
 "value":{
-	"value":[0, 12, 29, 255],
+	"value":[0, 12, 49, 255],
 	"comment":"kazdra pub merchant npc",
 	"brush":[["npc",
 	{
 		"kind" : "npc",
 		"species" : "kazdra",
 		"typeName" : "kazdrapub",
+		"parameters" : {
+			"persistent" : true
+		}
+	}
+	]]
+}
+},{
+"op":"add",
+"path":"/tiles/-",
+"value":{
+	"value":[0, 12, 65, 255],
+	"comment":"kazdra villager npc",
+	"brush":[["npc",
+	{
+		"kind" : "npc",
+		"species" : "kazdra",
+		"typeName" : "villager",
 		"parameters" : {
 			"persistent" : true
 		}
@@ -92,8 +131,40 @@
 "op":"add",
 "path":"/parts/-",
 "value":{
-	"name":"tradingcaravanKaz",
+	"name":"caravanKaz",
 	"rules":[],
-	"def":["image",["tradingcaravanKaz.png","tradingcaravanobjectsKaz.png"]]
+	"def":["image",["caravanKaz.png","caravanobjectsKaz.png"]]
+}
+},{
+"op":"add",
+"path":"/parts/-",
+"value":{
+	"name":"KazPub",
+	"rules":[],
+	"def":["image",["caravanKaz.png","KazPubobjects.png"]]
+}
+},{
+"op":"add",
+"path":"/parts/-",
+"value":{
+	"name":"KazGem",
+	"rules":[],
+	"def":["image",["caravanKaz.png","KazGemobjects.png"]]
+}
+},{
+"op":"add",
+"path":"/parts/-",
+"value":{
+	"name":"smallhouseKaz",
+	"rules":[],
+	"def":["image",["smallhouseKaz.png","smallhouseKaza.png"]]
+}
+},{
+"op":"add",
+"path":"/parts/-",
+"value":{
+	"name":"smallhouseKazCiv",
+	"rules":[],
+	"def":["image",["smallhouseKaz.png","smallhouseKazaCiv.png"]]
 }
 }]
