@@ -1,0 +1,99 @@
+[//Anchor
+{
+"op":"add",
+"path":"/metadata/anchor/-",
+"value":"banditcampKaz"
+},{
+"op":"add",
+"path":"/metadata/anchor/-",
+"value":"tradingcaravanKaz"
+},
+//Tiles
+//12=c
+{
+"op":"add",
+"path":"/tiles/-",
+"value":{
+	"value":[0, 12, 0, 255],
+	"comment":"kazdra bandit npc",
+	"brush":[["npc",
+	{
+		"kind" : "npc",
+		"species" : "kazdra",
+		"typeName" : "bandit",
+		"parameters" : {
+			"persistent" : true
+		}
+	}
+	]]
+}
+},{
+"op":"add",
+"path":"/tiles/-",
+"value":{
+	"value":[0, 12, 17, 255],
+	"comment":"kazdra merchant npc",
+	"brush":[["npc",
+	{
+		"kind" : "npc",
+		"species" : "kazdra",
+		"typeName" : "merchant",
+		"parameters" : {
+			"persistent" : true
+		}
+	}
+	]]
+}
+},{
+"op":"add",
+"path":"/tiles/-",
+"value":{
+	"value":[0, 12, 22, 255],
+	"comment":"kazdra gem merchant npc",
+	"brush":[["npc",
+	{
+		"kind" : "npc",
+		"species" : "kazdra",
+		"typeName" : "kazdragem",
+		"parameters" : {
+			"persistent" : true
+		}
+	}
+	]]
+}
+},{
+"op":"add",
+"path":"/tiles/-",
+"value":{
+	"value":[0, 12, 29, 255],
+	"comment":"kazdra pub merchant npc",
+	"brush":[["npc",
+	{
+		"kind" : "npc",
+		"species" : "kazdra",
+		"typeName" : "kazdrapub",
+		"parameters" : {
+			"persistent" : true
+		}
+	}
+	]]
+}
+},
+//Parts
+{
+"op":"add",
+"path":"/parts/-",
+"value":{
+	"name":"banditcampKaz",
+	"rules":[],
+	"def":["image",["banditcampKaz.png","banditcampobjectsKaz.png"]]
+}
+},{
+"op":"add",
+"path":"/parts/-",
+"value":{
+	"name":"tradingcaravanKaz",
+	"rules":[],
+	"def":["image",["tradingcaravanKaz.png","tradingcaravanobjectsKaz.png"]]
+}
+}]
