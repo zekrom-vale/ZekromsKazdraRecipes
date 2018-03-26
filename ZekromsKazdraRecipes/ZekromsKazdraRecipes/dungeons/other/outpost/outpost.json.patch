@@ -1,0 +1,20 @@
+[{
+	"op": "add",
+	"path": "/layers/5/objects/-",
+	"value": {
+	"height": 8,
+	"id": 1675,
+	"name": "",
+	"properties": {
+		"npc": "kazdra",
+		"seed": "27",
+		"typeName": "villager"
+	},
+	"rotation": 0,
+	"type": "",
+	"visible": true,
+	"width": 8,
+	"x": 3144,
+	"y": 1120
+	}
+}]
