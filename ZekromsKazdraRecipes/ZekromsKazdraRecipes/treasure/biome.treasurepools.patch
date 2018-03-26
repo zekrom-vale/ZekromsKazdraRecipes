@@ -1,5 +1,4 @@
-[
-{
+[{
 "op":"add",
 "path":"/volcanicTreasure/0/1/pool/-",
 "value":{"weight":0.1,"item":["spyrodrill"]}

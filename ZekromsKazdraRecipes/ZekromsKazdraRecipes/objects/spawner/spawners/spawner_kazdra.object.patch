@@ -1,5 +1,4 @@
-[
-{
+[{
 "op":"replace",
 "path":"/orientations/0/image",
 "value":"spawner_kazdra.png:<frame>"
@@ -31,5 +30,4 @@
 "op":"replace",
 "path":"/price",
 "value":5000
-}
-]
+}]

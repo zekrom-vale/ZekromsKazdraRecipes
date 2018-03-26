@@ -1,5 +1,4 @@
-[
-{
+[{
 "op":"remove",
 "path":"/platform"
 },{
@@ -29,5 +28,4 @@
 },{
 "op":"remove",
 "path":"/transparent"
-}
-]
+}]

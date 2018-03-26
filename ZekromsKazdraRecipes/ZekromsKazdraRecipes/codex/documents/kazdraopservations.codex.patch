@@ -1,5 +1,4 @@
-[
-{
+[{
 	"op":"add",
 	"path":"/species",
 	"value":"kazdra"
@@ -18,5 +17,4 @@
 	"op":"replace",
 	"path":"/id",
 	"value":"kazdraobservations"
-}
-]
+}]

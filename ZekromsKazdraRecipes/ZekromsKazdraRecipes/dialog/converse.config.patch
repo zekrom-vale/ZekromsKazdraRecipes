@@ -1,5 +1,4 @@
-[
-{
+[{
 	"op":"replace",
 	"path":"/greeting/human/kazdra/4",
 	"value":"Need somethin'?"
@@ -111,5 +110,4 @@
 	"op":"replace",
 	"path":"/converse/kazdra/kazdra/21",
 	"value":"'Ey,why don't ya 'ave a seat an' tell us about your adventures,mate?"
-}
-]
+}]

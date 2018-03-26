@@ -1,5 +1,4 @@
-[
-{
+[{
 	"op":"replace",
 	"path":"/converse/kazdra/generic/9",
 	"value":"I was on one of the original colony ships,zweh. It's so cool meeting new races!"
@@ -43,5 +42,4 @@
 	"op":"replace",
 	"path":"/converse/kazdra/kazdra/43",
 	"value":"To be honest,I haven't really been hoarding that much. Heh."
-}
-]
+}]
