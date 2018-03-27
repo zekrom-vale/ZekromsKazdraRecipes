@@ -1,0 +1,61 @@
+//random id
+//x&y: location
+//properties: npc stuff
+[{
+"op": "add",
+"path": "/layers/5/objects/-",
+"value": {
+	"height": 8,
+	"id": 5350,
+	"name": "",
+	"properties": {
+		"npc": "kazdra",
+		"seed": "27",
+		"typeName": "villager"
+	},
+	"rotation": 0,
+	"type": "",
+	"visible": true,
+	"width": 8,
+	"x": 3144,
+	"y": 1120
+}
+},{
+"op": "add",
+"path": "/layers/5/objects/-",
+"value": {
+	"height": 8,
+	"id": 5351,
+	"name": "",
+	"properties": {
+		"npc": "kazdra",
+		"seed": "64",
+		"typeName": "villager"
+	},
+	"rotation": 0,
+	"type": "",
+	"visible": true,
+	"width": 8,
+	"x": 2472,
+	"y": 1120
+}
+},{
+"op": "add",
+"path": "/layers/5/objects/-",
+"value": {
+	"height": 8,
+	"id": 5352,
+	"name": "",
+	"properties": {
+		"npc": "kazdra",
+		"seed": "43",
+		"typeName": "guard"
+	},
+	"rotation": 0,
+	"type": "",
+	"visible": true,
+	"width": 8,
+	"x": 3400,
+	"y": 880
+}
+}]
