@@ -2,6 +2,6 @@
   {
     "op": "replace",
     "path": "/layers/3/objects/0/properties/npc",
-    "value": "apex, avian, human, hylotl, kazdra"
+    "value": "apex, avian, human, hylotl"
   }
 ]

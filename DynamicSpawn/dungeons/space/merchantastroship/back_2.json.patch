@@ -2,9 +2,9 @@
 {
 "op": "replace",
 "path": "/layers/3/objects/16/properties/npc",
-"value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+"value": "apex, avian, floran, glitch, human, hylotl, novakid, test"
 },{
 "op": "replace",
 "path": "/layers/3/objects/17/properties/npc",
-"value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+"value": "apex, avian, floran, glitch, human, hylotl, novakid, test"
 }]
