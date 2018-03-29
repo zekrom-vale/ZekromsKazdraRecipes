@@ -1,6 +1,5 @@
 $prev= Get-Content prevVal.txt
-$val= Read-Host 'New Value'
-$val= "apex, avian, floran, glitch, human, hylotl, novakid, $($val)"
+$val= "apex, avian, floran, glitch, human, hylotl, novakid"
 $item = Get-ChildItem . *.json.patch -rec
 foreach ($file in $item){
     (Get-Content $file.PSPath) |
@@ -10,8 +9,7 @@ foreach ($file in $item){
 $val| Set-Content 'prevVal.txt'
 
 $prev= Get-Content prevVal2.txt
-$val= Read-Host 'Second New Value'
-$val= "apex, avian, human, hylotl, $($val)"
+$val= "apex, avian, human, hylotl"
 foreach ($file in $item){
     (Get-Content $file.PSPath) |
     Foreach-Object { $_ -replace $prev, $val } |
