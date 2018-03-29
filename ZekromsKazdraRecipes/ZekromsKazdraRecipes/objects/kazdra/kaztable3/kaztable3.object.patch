@@ -1,5 +1,5 @@
 [{
 "op":"add",
-"path":"colonyTags",
+"path":"/colonyTags",
 "value":["kazdra","commerce"]
 }]
