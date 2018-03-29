@@ -1,7 +1,0 @@
-{
-"input":[
-	{"item":"resonite","count":2},{"item":"resonite","count":3},{"item":"kazcloth","count":10}
-],
-"output":{"item":"crystalpanel","count":10},
-"groups":["craftingfurniture","materials","all"]
-}

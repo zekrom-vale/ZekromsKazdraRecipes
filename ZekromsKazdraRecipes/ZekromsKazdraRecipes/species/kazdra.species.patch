@@ -15,12 +15,6 @@
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"spyrodrill"}
 },
-//Materials
-{
-"op":"add",
-"path":"/defaultBlueprints/tier1/-",
-"value":{"item":"woodgemplatform"}
-},
 //Juice
 {
 "op":"add",
