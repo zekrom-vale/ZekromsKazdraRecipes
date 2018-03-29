@@ -15,12 +15,6 @@
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"spyrodrill"}
 },
-//Juice
-{
-"op":"add",
-"path":"/defaultBlueprints/tier1/-",
-"value":{"item":"kahla2"}
-},
 //Ship
 {
 "op":"add",
