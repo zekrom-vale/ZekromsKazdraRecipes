@@ -1,0 +1,17 @@
+[
+  {
+    "op": "replace",
+    "path": "/layers/3/objects/20/properties/npc",
+    "value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+  },
+  {
+    "op": "replace",
+    "path": "/layers/3/objects/21/properties/npc",
+    "value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+  },
+  {
+    "op": "replace",
+    "path": "/layers/3/objects/22/properties/npc",
+    "value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+  }
+]

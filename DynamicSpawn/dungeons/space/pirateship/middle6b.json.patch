@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/layers/5/objects/0/properties/npc",
+    "value": "apex, avian, human, hylotl, kazdra"
+  },
+  {
+    "op": "replace",
+    "path": "/layers/5/objects/1/properties/npc",
+    "value": "apex, avian, human, hylotl, kazdra"
+  }
+]

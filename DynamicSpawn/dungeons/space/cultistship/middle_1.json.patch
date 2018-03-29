@@ -1,0 +1,27 @@
+[
+  {
+    "op": "replace",
+    "path": "/layers/3/objects/10/properties/npc",
+    "value": "apex, avian, human, hylotl, kazdra"
+  },
+  {
+    "op": "replace",
+    "path": "/layers/3/objects/25/properties/npc",
+    "value": "apex, avian, human, hylotl, kazdra"
+  },
+  {
+    "op": "replace",
+    "path": "/layers/3/objects/26/properties/npc",
+    "value": "apex, avian, human, hylotl, kazdra"
+  },
+  {
+    "op": "replace",
+    "path": "/layers/3/objects/27/properties/npc",
+    "value": "apex, avian, human, hylotl, kazdra"
+  },
+  {
+    "op": "replace",
+    "path": "/layers/5/objects/0/properties/npc",
+    "value": "apex, avian, human, hylotl, kazdra"
+  }
+]
