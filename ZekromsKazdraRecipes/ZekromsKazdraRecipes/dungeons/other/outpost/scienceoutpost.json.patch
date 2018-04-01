@@ -1,0 +1,25 @@
+[{
+"op": "add",
+"path": "/layers/5/objects/-",
+"value": {
+	"height":8,
+	"id":65434,
+	"name":"",
+	"properties":{
+		"npc":"kazdra",
+		"seed":"11",
+		"typeName":"fuoutpostcivilian2"
+	},
+	"propertytypes":{
+		"npc":"string",
+		"seed":"string",
+		"typeName":"string"
+	},
+	"rotation":0,
+	"type":"",
+	"visible":true,
+	"width":8,
+	"x":2736,
+	"y":992
+}
+}]
