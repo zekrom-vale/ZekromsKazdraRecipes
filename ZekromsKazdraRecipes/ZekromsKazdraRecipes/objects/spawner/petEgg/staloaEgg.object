@@ -1,0 +1,21 @@
+{
+	"objectName" : "staloaEgg",
+	"colonyTags" : ["kazdra"],
+	 "rarity" : "Common",
+	"printable" : false,
+	"price" : 700,
+	"description" : "A a small egg.",
+	"shortdescription" : "Staloa Egg",
+	"race" : "generic",
+
+	"inventoryIcon" : "staloaEgg.png",
+	"scripts" : ["/objects/spawner/petSpawner.lua"],
+	"scriptDelta" : 20,
+	"shipPetType" : "staloa",
+	"spawnOffset" : [2, 0],
+	"orientations":[{
+		"image" : "staloaEgg.png",
+		"spaceScan" : 0.1,
+		"anchors" : [ "bottom" ]
+	}]
+}
