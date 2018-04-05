@@ -1,4 +1,8 @@
 [{
 "op":"remove",
 "path":"/groups"
+},{
+"op":"replace",
+"path":"/output/item",
+"value":"spawnerkazdra"
 }]
