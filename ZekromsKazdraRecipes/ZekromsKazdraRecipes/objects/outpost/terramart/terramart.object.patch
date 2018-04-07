@@ -14,4 +14,8 @@
 "op":"add",
 "path":"/interactData/items/-",
 "value":{"item":"rootpopseed"}
+},{
+"op":"add",
+"path":"/interactData/items/-",
+"value":{"item":"staloaEgg"}
 }]
