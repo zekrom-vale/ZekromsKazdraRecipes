@@ -1,8 +1,6 @@
 [{"op":"add",
 "path":"/hail/kazdra",
 "value":{
-	 "default":[
-	   "Hi! (Debug)"
-	]
+		"default":["Hi! (Debug)"]
 }
 }]
