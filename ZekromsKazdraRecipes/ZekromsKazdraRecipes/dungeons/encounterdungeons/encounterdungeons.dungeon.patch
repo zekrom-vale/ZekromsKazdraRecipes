@@ -1,10 +1,10 @@
 [{//Anchor
 "op":"add",
-"path":"/metadata/anchor",
+"path":"/metadata/anchor/-",
 "value":"merchantkaz"
 },{
 "op":"add",
-"path":"/metadata/anchor",
+"path":"/metadata/anchor/-",
 "value":"merchantkazGem"
 },//Parts
 {
