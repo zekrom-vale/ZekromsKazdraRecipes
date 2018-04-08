@@ -53,12 +53,14 @@
 },{
 "op":"add",
 "path":"/kazdragem",
-"value":[[0,
-	{
-	  "pool":[
-		{"weight":0.8,"item":["resonite",9]},{"weight":0.3,"item":["resoniteseed",4]},{"weight":0.1,"item":["koorium",3]},{"weight":0.6,"item":["hiron",5]},{"weight":0.3,"item":["hironseed",3]},{"weight":0.1,"item":["kazein",2]},{"weight":0.4,"item":["zoastone",5]},{"weight":0.2,"item":["zoastoneseed",3]}
-	]
-	}
-]]
-}
-]
+"value":[[0,{"pool":[
+	{"weight":0.8,"item":["resonite",9]},
+	{"weight":0.3,"item":["resoniteseed",4]},
+	{"weight":0.1,"item":["koorium",3]},
+	{"weight":0.6,"item":["hiron",5]},
+	{"weight":0.3,"item":["hironseed",3]},
+	{"weight":0.1,"item":["kazein",2]},
+	{"weight":0.4,"item":["zoastone",5]},
+	{"weight":0.2,"item":["zoastoneseed",3]}
+]}]]
+}]

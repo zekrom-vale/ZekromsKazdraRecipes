@@ -1,17 +1,13 @@
-[
-  {
-    "op": "replace",
-    "path": "/layers/3/objects/10/properties/npc",
-    "value": "human,apex,avian,hylotl,floran,glitch,kazdra"
-  },
-  {
-    "op": "replace",
-    "path": "/layers/3/objects/12/properties/npc",
-    "value": "human,apex,avian,hylotl,floran,glitch,kazdra"
-  },
-  {
-    "op": "replace",
-    "path": "/layers/3/objects/23/properties/npc",
-    "value": "human,apex,avian,hylotl,floran,glitch,kazdra"
-  }
-]
+[{
+	"op": "replace",
+	"path": "/layers/3/objects/10/properties/npc",
+	"value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+},{
+	"op": "replace",
+	"path": "/layers/3/objects/12/properties/npc",
+	"value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+},{
+	"op": "replace",
+	"path": "/layers/3/objects/23/properties/npc",
+	"value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+}]

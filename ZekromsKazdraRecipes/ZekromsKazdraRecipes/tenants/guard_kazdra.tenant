@@ -1,22 +1,20 @@
 {
-"name":"merchant_kazdra",
-"priority":5,
-"colonyTagCriteria":{
-	"light":1,
-	"door":1,
-	"kazdra":6,
-	"combat":8
-},
-"tenants":[
-{
-	"spawn":"npc",
-	"species":"kazdra",
-	"type":"guard",
-	"overrides":{}
-}
-],
-"rent":{
-	"periodRange":[900.0,1850.0],
-	"pool":"villagerGift"
-}
+	"name":"merchant_kazdra",
+	"priority":5,
+	"colonyTagCriteria":{
+		"light":1,
+		"door":1,
+		"kazdra":6,
+		"combat":8
+	},
+	"tenants":[{
+		"spawn":"npc",
+		"species":"kazdra",
+		"type":"guard",
+		"overrides":{}
+	}],
+	"rent":{
+		"periodRange":[900.0,1850.0],
+		"pool":"villagerGift"
+	}
 }

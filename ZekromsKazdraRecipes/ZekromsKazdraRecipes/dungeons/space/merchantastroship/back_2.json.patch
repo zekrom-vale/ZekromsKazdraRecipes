@@ -1,5 +1,4 @@
-[
-{
+[{
 "op": "replace",
 "path": "/layers/3/objects/16/properties/npc",
 "value": "human,apex,avian,hylotl,floran,glitch,kazdra"
