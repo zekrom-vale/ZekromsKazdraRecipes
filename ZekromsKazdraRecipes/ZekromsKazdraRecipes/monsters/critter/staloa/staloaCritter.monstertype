@@ -1,11 +1,9 @@
 {
 	"type":"staloaCritter",
-	"categories":[ "staloa" ],
-	"parts":[ "body" ],
+	"categories":["staloa"],
+	"parts":["body"],
 	"animation":"staloa.animation",
-	"dropPools":[{
-		"default":"empty"
-	}],
+	"dropPools":[{"default":"empty"}],
 
 	"baseParameters":{
 		"scripts":["/monsters/monster.lua"],
@@ -31,7 +29,7 @@
 			"damage":15,
 			"teamType":"enemy",
 			"damageSourceKind":"lash",
-			"statusEffects":[ ]
+			"statusEffects":[]
 		},
 		"statusSettings":{
 			"statusProperties":{"targetMaterialKind":"organic"},
