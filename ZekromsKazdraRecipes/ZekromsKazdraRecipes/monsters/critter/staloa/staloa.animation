@@ -13,20 +13,14 @@
 				"priority":0,
 				"default":"walk",
 				"states":{
-					"idle":{
-						"frames":1
-					},
-					"stand":{
-						"frames":1
-					},
+					"idle":{"frames":1},
+					"stand":{"frames":1},
 					"run":{
 						"frames":4,
 						"cycle":0.5,
 						"mode":"loop"
 					},
-					"blink":{
-						"frames":1
-					},
+					"blink":{"frames":1},
 					"walk":{
 						"frames":4,
 						"cycle":0.5,
@@ -67,12 +61,8 @@
 						"mode":"transition",
 						"transition":"stand"
 					},
-					"sleep":{
-						"frames":1
-					},
-					"invisible":{
-						"frames":1
-					}
+					"sleep":{"frames":1},
+					"invisible":{"frames":1}
 				}
 			}
 		},
@@ -83,48 +73,48 @@
 				"offset":[0, 1]
 			},
 			"partStates":{"movement":{
-				"idle":{
-					"properties":{"image":"<partImage>:idle.<frame>"}
-				},
-				"stand":{
-					"properties":{"image":"<partImage>:stand.<frame>"}
-				},
-				"run":{
-					"properties":{"image":"<partImage>:run.<frame>"}
-				},
-				"blink":{
-					"properties":{"image":"<partImage>:blink.<frame>"}
-				},
-				"walk":{
-					"properties":{"image":"<partImage>:walk.<frame>"}
-				},
-				"jumping":{
-					"properties":{"image":"<partImage>:jump.<frame>"}
-				},
-				"falling":{
-					"properties":{"image":"<partImage>:fall.<frame>"}
-				},
-				"eat":{
-					"properties":{"image":"<partImage>:eat.<frame>"}
-				},
-				"eatloop":{
-					"properties":{"image":"<partImage>:eatloop.<frame>"}
-				},
-				"inspect":{
-					"properties":{"image":"<partImage>:inspect.<frame>"}
-				},
-				"swim":{
-					"properties":{"image":"<partImage>:swim.<frame>"}
-				},
-				"sound":{
-					"properties":{"image":"<partImage>:sound.<frame>"}
-				},
-				"sleep":{
-					"properties":{"image":"<partImage>:sleep.<frame>"}
-				},
-				"invisible":{
-					"properties":{"image":"<partImage>:invisible.<frame>"}
-				}
+				"idle":{"properties":{
+					"image":"<partImage>:idle.<frame>"
+				}},
+				"stand":{"properties":{
+					"image":"<partImage>:stand.<frame>"
+				}},
+				"run":{"properties":{
+					"image":"<partImage>:run.<frame>"
+				}},
+				"blink":{"properties":{
+					"image":"<partImage>:blink.<frame>"
+				}},
+				"walk":{"properties":{
+					"image":"<partImage>:walk.<frame>"
+				}},
+				"jumping":{"properties":{
+					"image":"<partImage>:jump.<frame>"
+				}},
+				"falling":{"properties":{
+					"image":"<partImage>:fall.<frame>"
+				}},
+				"eat":{"properties":{
+					"image":"<partImage>:eat.<frame>"
+				}},
+				"eatloop":{"properties":{
+					"image":"<partImage>:eatloop.<frame>"
+				}},
+				"inspect":{"properties":{
+					"image":"<partImage>:inspect.<frame>"
+				}},
+				"swim":{"properties":{
+					"image":"<partImage>:swim.<frame>"
+				}},
+				"sound":{"properties":{
+					"image":"<partImage>:sound.<frame>"
+				}},
+				"sleep":{"properties":{
+					"image":"<partImage>:sleep.<frame>"
+				}},
+				"invisible":{"properties":{
+					"image":"<partImage>:invisible.<frame>"
+				}}
 			}}
 		}}
 	},
