@@ -1,7 +1,7 @@
 [{
 "op":"add",
-"path":"/items/kazdra/0",
-"value":[0,[
+"path":"/items/kazdra",
+"value":[[0,[
 	{
 		"head":[{"name":"kazdratier1head"}],
 		"chest":[{"name":"kazdratier1chest"}],
@@ -63,5 +63,5 @@
 			"kazdratier4broadsword"
 		]
 	}
-]]
+]]]
 }]

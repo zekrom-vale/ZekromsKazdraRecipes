@@ -1,4 +1,4 @@
 [{"op":"add",
-"path":"/hail/kazdra/default",
-"value":["Hi","Yo","Eh?","Oi!"]
+"path":"/hail/kazdra",
+"value":{"default":["Hi","Yo","Eh?","Oi!"]}
 }]

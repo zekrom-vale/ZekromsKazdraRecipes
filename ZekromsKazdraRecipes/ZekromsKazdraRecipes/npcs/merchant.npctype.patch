@@ -1,12 +1,11 @@
-[
-{
+[{
 "op":"add",
 "path":"/scriptConfig/merchant/categories/kazdra",
 "value":["basicmerchant","randomguns","randomswords","humaningredients"]
 },{
 "op":"add",
 "path":"/items/kazdra",
-"value":[0,[
+"value":[[0,[
 	{
 		"chest":[
 			{"name":"huntsmanshirt","parameters":{"colorIndex":1}},{"name":"huntsmanshirt","parameters":{"colorIndex":3}},{"name":"huntsmanshirt","parameters":{"colorIndex":4}},{"name":"huntsmanshirt","parameters":{"colorIndex":5}},{"name":"huntsmanshirt","parameters":{"colorIndex":6}},{"name":"huntsmanshirt","parameters":{"colorIndex":7}},{"name":"huntsmanshirt","parameters":{"colorIndex":8}},{"name":"huntsmanshirt","parameters":{"colorIndex":9}},{"name":"inviskazchest"}
