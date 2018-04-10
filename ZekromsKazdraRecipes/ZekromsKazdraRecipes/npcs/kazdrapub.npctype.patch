@@ -3,8 +3,8 @@
 "path":"/items/kazdra/0",
 "value":[0,[
 	{
-	"chest":[
-		{"name":"huntsmanshirt","parameters":{"colorIndex":1}},
+		"chest":[
+			{"name":"huntsmanshirt","parameters":{"colorIndex":1}},
 			{"name":"huntsmanshirt","parameters":{"colorIndex":3}},
 			{"name":"huntsmanshirt","parameters":{"colorIndex":4}},
 			{"name":"huntsmanshirt","parameters":{"colorIndex":5}},
@@ -13,9 +13,9 @@
 			{"name":"huntsmanshirt","parameters":{"colorIndex":8}},
 			{"name":"huntsmanshirt","parameters":{"colorIndex":9}},
 			{"name":"inviskazchest"}
-	],
-	"legs":[
-		{"name":"huntsmanskals","parameters":{"colorIndex":1}},
+		],
+		"legs":[
+			{"name":"huntsmanskals","parameters":{"colorIndex":1}},
 			{"name":"huntsmanskals","parameters":{"colorIndex":3}},
 			{"name":"huntsmanskals","parameters":{"colorIndex":4}},
 			{"name":"huntsmanskals","parameters":{"colorIndex":5}},
@@ -24,11 +24,10 @@
 			{"name":"huntsmanskals","parameters":{"colorIndex":8}},
 			{"name":"huntsmanskals","parameters":{"colorIndex":9}},
 			{"name":"inviskazpants"}
-	]
-	},
-			{
-	"chest":[
-		{"name":"gemcraftchest","parameters":{"colorIndex":1}},
+		]
+	},{
+		"chest":[
+			{"name":"gemcraftchest","parameters":{"colorIndex":1}},
 			{"name":"gemcraftchest","parameters":{"colorIndex":3}},
 			{"name":"gemcraftchest","parameters":{"colorIndex":4}},
 			{"name":"gemcraftchest","parameters":{"colorIndex":5}},
@@ -37,9 +36,9 @@
 			{"name":"gemcraftchest","parameters":{"colorIndex":8}},
 			{"name":"gemcraftchest","parameters":{"colorIndex":9}},
 			{"name":"inviskazchest"}
-	],
-	"legs":[
-		{"name":"gemcraftskals","parameters":{"colorIndex":1}},
+		],
+		"legs":[
+			{"name":"gemcraftskals","parameters":{"colorIndex":1}},
 			{"name":"gemcraftskals","parameters":{"colorIndex":3}},
 			{"name":"gemcraftskals","parameters":{"colorIndex":4}},
 			{"name":"gemcraftskals","parameters":{"colorIndex":5}},
@@ -48,11 +47,10 @@
 			{"name":"gemcraftskals","parameters":{"colorIndex":8}},
 			{"name":"gemcraftskals","parameters":{"colorIndex":9}},
 			{"name":"inviskazpants"}
-	]
-	},
-			{
-	"chest":[
-		{"name":"bellshirt","data":{"colorIndex":1}},
+		]
+	},{
+		"chest":[
+			{"name":"bellshirt","data":{"colorIndex":1}},
 			{"name":"bellshirt","data":{"colorIndex":3}},
 			{"name":"bellshirt","data":{"colorIndex":4}},
 			{"name":"bellshirt","data":{"colorIndex":5}},
@@ -60,9 +58,9 @@
 			{"name":"bellshirt","data":{"colorIndex":7}},
 			{"name":"bellshirt","data":{"colorIndex":8}},
 			{"name":"bellshirt","data":{"colorIndex":9}}
-	],
-	"legs":[
-		{"name":"bellskals","data":{"colorIndex":1}},
+		],
+		"legs":[
+			{"name":"bellskals","data":{"colorIndex":1}},
 			{"name":"bellskals","data":{"colorIndex":3}},
 			{"name":"bellskals","data":{"colorIndex":4}},
 			{"name":"bellskals","data":{"colorIndex":5}},
@@ -70,7 +68,7 @@
 			{"name":"bellskals","data":{"colorIndex":7}},
 			{"name":"bellskals","data":{"colorIndex":8}},
 			{"name":"bellskals","data":{"colorIndex":9}}
-	]
+		]
 	}
 ]]
 }]

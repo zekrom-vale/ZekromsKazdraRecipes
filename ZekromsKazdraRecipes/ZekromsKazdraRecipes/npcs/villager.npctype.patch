@@ -25,8 +25,7 @@
 			{"name":"huntsmanskals","parameters":{"colorIndex":9}},
 			{"name":"inviskazpants"}
 		]
-	},
-			{
+	},{
 		"chest":[
 			{"name":"gemcraftchest","parameters":{"colorIndex":1}},
 			{"name":"gemcraftchest","parameters":{"colorIndex":3}},
@@ -49,8 +48,7 @@
 			{"name":"gemcraftskals","parameters":{"colorIndex":9}},
 			{"name":"inviskazpants"}
 		]
-	},
-			{
+	},{
 		"chest":[
 			{"name":"colourfulchest","parameters":{"colorIndex":11}},
 			{"name":"inviskazchest"}
@@ -59,8 +57,7 @@
 			{"name":"thiefskals","parameters":{"colorIndex":2}},
 			{"name":"inviskazpants"}
 		]
-	},
-			{
+	},{
 		"chest":[
 			{"name":"thiefshirt","data":{"colorIndex":1}},
 			{"name":"thiefshirt","data":{"colorIndex":3}},
@@ -81,8 +78,7 @@
 			{"name":"thiefskals","data":{"colorIndex":8}},
 			{"name":"thiefskals","data":{"colorIndex":9}}
 		]
-	},
-			{
+	},{
 		"chest":[
 			{"name":"bellshirt","data":{"colorIndex":1}},
 			{"name":"bellshirt","data":{"colorIndex":3}},
