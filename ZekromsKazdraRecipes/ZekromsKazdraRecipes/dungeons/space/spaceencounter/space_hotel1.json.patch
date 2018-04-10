@@ -1,4 +1,9 @@
 [{
+"op":"test",
+"path":"/DynamicSpawn",
+"value":true,
+"inverse":true
+},{
 	"op": "replace",
 	"path": "/layers/5/objects/0/properties/npc",
 	"value": "apex, avian, human, hylotl, kazdra"
