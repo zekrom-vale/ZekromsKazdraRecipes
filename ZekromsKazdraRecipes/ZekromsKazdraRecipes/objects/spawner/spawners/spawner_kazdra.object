@@ -1,59 +1,59 @@
 {
-  "objectName": "spawnerkazdra",
-  "colonyTags": [
+  "objectName":"spawnerkazdra",
+  "colonyTags":[
     "misc"
-  ],
-  "rarity": "Common",
-  "description": "Spawn your very own Kazdra villager!",
-  "shortdescription": "Kazdra Spawner",
-  "race": "kazdra",
-  "printable": false,
-  "category": "spawner",
-  "price": 5000,
-  "apexDescription": "Spawning dragons? Um... Yes please!",
-  "avianDescription": "This will allow me to summon a kindred spirit.",
-  "floranDescription": "Floran sssummon myssteriousss wingy lizardsss!",
-  "glitchDescription": "Devious. Maybe if I put this in the arena...",
-  "humanDescription": "Time to burninate!",
-  "hylotlDescription": "I am curious about these 'dragons.' I suppose a few couldn't hurt.",
-  "inventoryIcon": "defaulticon.png",
-  "orientations": [
-    {
-      "image": "spawner_kazdra.png:<frame>",
-      "imagePosition": [
+ ],
+  "rarity":"Common",
+  "description":"Spawn your very own Kazdra villager!",
+  "shortdescription":"Kazdra Spawner",
+  "race":"kazdra",
+  "printable":false,
+  "category":"spawner",
+  "price":5000,
+  "apexDescription":"Spawning dragons? Um... Yes please!",
+  "avianDescription":"This will allow me to summon a kindred spirit.",
+  "floranDescription":"Floran sssummon myssteriousss wingy lizardsss!",
+  "glitchDescription":"Devious. Maybe if I put this in the arena...",
+  "humanDescription":"Time to burninate!",
+  "hylotlDescription":"I am curious about these 'dragons.' I suppose a few couldn't hurt.",
+  "inventoryIcon":"defaulticon.png",
+  "orientations":[
+   {
+      "image":"spawner_kazdra.png:<frame>",
+      "imagePosition":[
         -8,
         -8
-      ],
-      "spaceScan": 0.1,
-      "anchors": [
+     ],
+      "spaceScan":0.1,
+      "anchors":[
         "bottom"
-      ],
-      "frames": 4,
-      "animationCycle": 1.1
-    }
-  ],
-  "scripts": [
+     ],
+      "frames":4,
+      "animationCycle":1.1
+   }
+ ],
+  "scripts":[
     "/objects/spawner/spawners/spawner.lua"
-  ],
-  "scriptDelta": 1,
-  "animation": "/objects/spawner/spawners/spawner4.animation",
-  "animationParts": {
-    "switch": "spawner_kazdra.png:0"
-  },
-  "animationPosition": [
+ ],
+  "scriptDelta":1,
+  "animation":"/objects/spawner/spawners/spawner4.animation",
+  "animationParts":{
+    "switch":"spawner_kazdra.png:0"
+ },
+  "animationPosition":[
     -8,
     -8
-  ],
-  "inputNodes": [],
-  "outputNodes": [],
-  "spawner": {
-    "searchRadius": 32,
-    "npcSpeciesOptions": "kazdra",
-    "npcTypeOptions": "villager",
-    "npcParameterOptions": [
-      {
-        "dropPools": []
-      }
-    ]
-  }
+ ],
+  "inputNodes":[],
+  "outputNodes":[],
+  "spawner":{
+    "searchRadius":32,
+    "npcSpeciesOptions":"kazdra",
+    "npcTypeOptions":"villager",
+    "npcParameterOptions":[
+     {
+        "dropPools":[]
+     }
+   ]
+ }
 }
