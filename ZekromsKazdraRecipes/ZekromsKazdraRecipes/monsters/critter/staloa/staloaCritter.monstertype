@@ -4,14 +4,13 @@
 	"parts":["body"],
 	"animation":"staloa.animation",
 	"dropPools":[{"default":"empty"}],
-
 	"baseParameters":{
 		"scripts":["/monsters/monster.lua"],
 		"behavior":"walkingcritter",
-		"metaBoundBox":[-1.625, -2.375, 1.75, 2.0],
+		"metaBoundBox":[-1.625,-2.375,1.75,2.0],
 		"scale":1.0,
 		"movementSettings":{
-			"collisionPoly":[ [-0.75, -0.65], [-0.4, -1], [0.4, -1], [0.75, -0.65], [0.75, 0.15], [0.4, 0.5], [-0.4, 0.5], [-0.75, 0.15] ],
+			"collisionPoly":[[-0.75,-0.65],[-0.4,-1],[0.4,-1],[0.75,-0.65],[0.75,0.15],[0.4,0.5],[-0.4,0.5],[-0.75,0.15]],
 			"mass":1.0,
 			"walkSpeed":4,
 			"runSpeed":14,
@@ -25,7 +24,7 @@
 		"deathParticles":"deathPoof",
 		"damageTeamType":"passive",
 		"touchDamage":{
-			"poly":[ [-1.625, -2.375], [1.75, -2.375], [1.75, 2.0], [-1.625, 2.0] ],
+			"poly":[[-1.625,-2.375],[1.75,-2.375],[1.75,2.0],[-1.625,2.0]],
 			"damage":15,
 			"teamType":"enemy",
 			"damageSourceKind":"lash",
@@ -59,10 +58,10 @@
 			}
 		},
 		"persistent":true,
-		"mouthOffset":[0, 0],
-		"feetOffset":[0, -8],
+		"mouthOffset":[0,0],
+		"feetOffset":[0,-8],
 		"capturable":true,
 		"relocatable":true,
-		"nametagColor":[64, 200, 255]
+		"nametagColor":[64,200,255]
 	}
 }

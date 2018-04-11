@@ -4,11 +4,11 @@
 "value":true,
 "inverse":true
 },{
-	"op": "replace",
-	"path": "/layers/3/objects/35/properties/npc",
-	"value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+	"op":"replace",
+	"path":"/layers/3/objects/35/properties/npc",
+	"value":"human,apex,avian,hylotl,floran,glitch,kazdra"
 },{
-	"op": "replace",
-	"path": "/layers/3/objects/36/properties/npc",
-	"value": "human,apex,avian,hylotl,floran,glitch,kazdra"
+	"op":"replace",
+	"path":"/layers/3/objects/36/properties/npc",
+	"value":"human,apex,avian,hylotl,floran,glitch,kazdra"
 }]

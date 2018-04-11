@@ -4,27 +4,10 @@
 "value":[0,[
 	{
 		"chest":[
-			{"name":"colourfulchest","parameters":{"colorIndex":11}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":1}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":3}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":4}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":5}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":6}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":7}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":8}},
-			{"name":"gemcraftchest","parameters":{"colorIndex":9}},
-			{"name":"inviskazchest"}
+			{"name":"colourfulchest","parameters":{"colorIndex":11}},{"name":"gemcraftchest","parameters":{"colorIndex":1}},{"name":"gemcraftchest","parameters":{"colorIndex":3}},{"name":"gemcraftchest","parameters":{"colorIndex":4}},{"name":"gemcraftchest","parameters":{"colorIndex":5}},{"name":"gemcraftchest","parameters":{"colorIndex":6}},{"name":"gemcraftchest","parameters":{"colorIndex":7}},{"name":"gemcraftchest","parameters":{"colorIndex":8}},{"name":"gemcraftchest","parameters":{"colorIndex":9}},{"name":"inviskazchest"}
 		],
 		"legs":[
-			{"name":"gemcraftskals","parameters":{"colorIndex":1}},
-			{"name":"gemcraftskals","parameters":{"colorIndex":3}},
-			{"name":"gemcraftskals","parameters":{"colorIndex":4}},
-			{"name":"gemcraftskals","parameters":{"colorIndex":5}},
-			{"name":"gemcraftskals","parameters":{"colorIndex":6}},
-			{"name":"gemcraftskals","parameters":{"colorIndex":7}},
-			{"name":"gemcraftskals","parameters":{"colorIndex":8}},
-			{"name":"gemcraftskals","parameters":{"colorIndex":9}},
-			{"name":"inviskazpants"}
+			{"name":"gemcraftskals","parameters":{"colorIndex":1}},{"name":"gemcraftskals","parameters":{"colorIndex":3}},{"name":"gemcraftskals","parameters":{"colorIndex":4}},{"name":"gemcraftskals","parameters":{"colorIndex":5}},{"name":"gemcraftskals","parameters":{"colorIndex":6}},{"name":"gemcraftskals","parameters":{"colorIndex":7}},{"name":"gemcraftskals","parameters":{"colorIndex":8}},{"name":"gemcraftskals","parameters":{"colorIndex":9}},{"name":"inviskazpants"}
 		]
 	},{
 		"head":[{"name":"kazdratier1head"}],
@@ -44,46 +27,17 @@
 		"legs":[{"name":"kazdratier4pants"}]
 	},{
 		"chest":[
-			{"name":"thiefshirt","parameters":{"colorIndex":1}},
-			{"name":"thiefshirt","parameters":{"colorIndex":3}},
-			{"name":"thiefshirt","parameters":{"colorIndex":4}},
-			{"name":"thiefshirt","parameters":{"colorIndex":5}},
-			{"name":"thiefshirt","parameters":{"colorIndex":6}},
-			{"name":"thiefshirt","parameters":{"colorIndex":7}},
-			{"name":"thiefshirt","parameters":{"colorIndex":8}},
-			{"name":"thiefshirt","parameters":{"colorIndex":9}}
+			{"name":"thiefshirt","parameters":{"colorIndex":1}},{"name":"thiefshirt","parameters":{"colorIndex":3}},{"name":"thiefshirt","parameters":{"colorIndex":4}},{"name":"thiefshirt","parameters":{"colorIndex":5}},{"name":"thiefshirt","parameters":{"colorIndex":6}},{"name":"thiefshirt","parameters":{"colorIndex":7}},{"name":"thiefshirt","parameters":{"colorIndex":8}},{"name":"thiefshirt","parameters":{"colorIndex":9}}
 		],
 		"legs":[
-			{"name":"thiefskals","parameters":{"colorIndex":1}},
-			{"name":"thiefskals","parameters":{"colorIndex":2}},
-			{"name":"thiefskals","parameters":{"colorIndex":3}},
-			{"name":"thiefskals","parameters":{"colorIndex":4}},
-			{"name":"thiefskals","parameters":{"colorIndex":5}},
-			{"name":"thiefskals","parameters":{"colorIndex":6}},
-			{"name":"thiefskals","parameters":{"colorIndex":7}},
-			{"name":"thiefskals","parameters":{"colorIndex":8}},
-			{"name":"thiefskals","parameters":{"colorIndex":9}}
+			{"name":"thiefskals","parameters":{"colorIndex":1}},{"name":"thiefskals","parameters":{"colorIndex":2}},{"name":"thiefskals","parameters":{"colorIndex":3}},{"name":"thiefskals","parameters":{"colorIndex":4}},{"name":"thiefskals","parameters":{"colorIndex":5}},{"name":"thiefskals","parameters":{"colorIndex":6}},{"name":"thiefskals","parameters":{"colorIndex":7}},{"name":"thiefskals","parameters":{"colorIndex":8}},{"name":"thiefskals","parameters":{"colorIndex":9}}
 		]
 	},{
 		"chest":[
-			{"name":"bellshirt","parameters":{"colorIndex":1}},
-			{"name":"bellshirt","parameters":{"colorIndex":3}},
-			{"name":"bellshirt","parameters":{"colorIndex":4}},
-			{"name":"bellshirt","parameters":{"colorIndex":5}},
-			{"name":"bellshirt","parameters":{"colorIndex":6}},
-			{"name":"bellshirt","parameters":{"colorIndex":7}},
-			{"name":"bellshirt","parameters":{"colorIndex":8}},
-			{"name":"bellshirt","parameters":{"colorIndex":9}}
+			{"name":"bellshirt","parameters":{"colorIndex":1}},{"name":"bellshirt","parameters":{"colorIndex":3}},{"name":"bellshirt","parameters":{"colorIndex":4}},{"name":"bellshirt","parameters":{"colorIndex":5}},{"name":"bellshirt","parameters":{"colorIndex":6}},{"name":"bellshirt","parameters":{"colorIndex":7}},{"name":"bellshirt","parameters":{"colorIndex":8}},{"name":"bellshirt","parameters":{"colorIndex":9}}
 		],
 		"legs":[
-			{"name":"bellskals","parameters":{"colorIndex":1}},
-			{"name":"bellskals","parameters":{"colorIndex":3}},
-			{"name":"bellskals","parameters":{"colorIndex":4}},
-			{"name":"bellskals","parameters":{"colorIndex":5}},
-			{"name":"bellskals","parameters":{"colorIndex":6}},
-			{"name":"bellskals","parameters":{"colorIndex":7}},
-			{"name":"bellskals","parameters":{"colorIndex":8}},
-			{"name":"bellskals","parameters":{"colorIndex":9}}
+			{"name":"bellskals","parameters":{"colorIndex":1}},{"name":"bellskals","parameters":{"colorIndex":3}},{"name":"bellskals","parameters":{"colorIndex":4}},{"name":"bellskals","parameters":{"colorIndex":5}},{"name":"bellskals","parameters":{"colorIndex":6}},{"name":"bellskals","parameters":{"colorIndex":7}},{"name":"bellskals","parameters":{"colorIndex":8}},{"name":"bellskals","parameters":{"colorIndex":9}}
 		]
 	}
 ]]

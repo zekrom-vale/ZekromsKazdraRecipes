@@ -1,39 +1,39 @@
 [{
-"op": "add",
-"path": "/layers/8/objects/-",
-"value": {
-	"height": 8,
-	"id": 5350,
-	"name": "",
-	"properties": {
-		"npc": "kazdra",
-		"seed": "28",
-		"typeName": "protectoratehallstudent4"
+"op":"add",
+"path":"/layers/8/objects/-",
+"value":{
+	"height":8,
+	"id":5350,
+	"name":"",
+	"properties":{
+		"npc":"kazdra",
+		"seed":"28",
+		"typeName":"protectoratehallstudent4"
 	},
-	"rotation": 0,
-	"type": "",
-	"visible": true,
-	"width": 8,
-	"x": 1696,
-	"y": 1504
+	"rotation":0,
+	"type":"",
+	"visible":true,
+	"width":8,
+	"x":1696,
+	"y":1504
 }
 },{
-"op": "add",
-"path": "/layers/8/objects/-",
-"value": {
-	"height": 8,
-	"id": 5351,
-	"name": "",
-	"properties": {
-		"npc": "kazdra",
-		"seed": "356",
-		"typeName": "protectoratehallstudent4"
+"op":"add",
+"path":"/layers/8/objects/-",
+"value":{
+	"height":8,
+	"id":5351,
+	"name":"",
+	"properties":{
+		"npc":"kazdra",
+		"seed":"356",
+		"typeName":"protectoratehallstudent4"
 	},
-	"rotation": 0,
-	"type": "",
-	"visible": true,
-	"width": 8,
-	"x": 5624,
-	"y": 1592
+	"rotation":0,
+	"type":"",
+	"visible":true,
+	"width":8,
+	"x":5624,
+	"y":1592
 }
 }]

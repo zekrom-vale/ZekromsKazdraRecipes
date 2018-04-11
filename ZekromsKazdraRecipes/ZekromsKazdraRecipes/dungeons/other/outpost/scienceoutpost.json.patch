@@ -1,7 +1,7 @@
 [{
-"op": "add",
-"path": "/layers/5/objects/-",
-"value": {
+"op":"add",
+"path":"/layers/5/objects/-",
+"value":{
 	"height":8,
 	"id":65434,
 	"name":"",

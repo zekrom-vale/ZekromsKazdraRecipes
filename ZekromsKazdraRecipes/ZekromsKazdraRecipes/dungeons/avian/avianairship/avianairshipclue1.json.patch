@@ -4,15 +4,15 @@
 "value":true,
 "inverse":true
 },{
-	"op": "replace",
-	"path": "/layers/3/objects/143/properties/npc",
-	"value": "avian, kazdra"
+	"op":"replace",
+	"path":"/layers/3/objects/143/properties/npc",
+	"value":"avian, kazdra"
 },{
-	"op": "replace",
-	"path": "/layers/3/objects/158/properties/npc",
-	"value": "avian, kazdra"
+	"op":"replace",
+	"path":"/layers/3/objects/158/properties/npc",
+	"value":"avian, kazdra"
 },{
-	"op": "replace",
-	"path": "/layers/3/objects/165/properties/npc",
-	"value": "avian, kazdra"
+	"op":"replace",
+	"path":"/layers/3/objects/165/properties/npc",
+	"value":"avian, kazdra"
 }]

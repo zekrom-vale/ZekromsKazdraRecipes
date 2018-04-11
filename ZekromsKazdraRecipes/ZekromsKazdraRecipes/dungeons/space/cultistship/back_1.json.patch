@@ -4,7 +4,7 @@
 "value":true,
 "inverse":true
 },{
-	"op": "replace",
-	"path": "/layers/5/objects/1/properties/npc",
-	"value": "apex, avian, human, hylotl, kazdra"
+	"op":"replace",
+	"path":"/layers/5/objects/1/properties/npc",
+	"value":"apex, avian, human, hylotl, kazdra"
 }]

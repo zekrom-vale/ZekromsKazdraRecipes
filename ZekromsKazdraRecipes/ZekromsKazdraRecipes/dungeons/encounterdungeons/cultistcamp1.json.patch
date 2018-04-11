@@ -4,11 +4,11 @@
 "value":true,
 "inverse":true
 },{
-	"op": "replace",
-	"path": "/layers/3/objects/1/properties/npc",
-	"value": "apex, avian, human, hylotl, kazdra"
+	"op":"replace",
+	"path":"/layers/3/objects/1/properties/npc",
+	"value":"apex, avian, human, hylotl, kazdra"
 },{
-	"op": "replace",
-	"path": "/layers/3/objects/2/properties/npc",
-	"value": "apex, avian, human, hylotl, kazdra"
+	"op":"replace",
+	"path":"/layers/3/objects/2/properties/npc",
+	"value":"apex, avian, human, hylotl, kazdra"
 }]

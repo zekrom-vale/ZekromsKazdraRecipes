@@ -12,7 +12,7 @@
 	"image":"spyrodrill.png:{frame}",
 	"frames":3,
 	"animationCycle":0.2,
-	"handPosition":[-5, -1],
+	"handPosition":[-5,-1],
 	"pointable":true,
 	"swingStart":0,
 	"swingFinish":0,

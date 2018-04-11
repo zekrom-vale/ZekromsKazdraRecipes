@@ -11,16 +11,16 @@
 "op":"add",
 "path":"/parts",
 "value":{
-	"name" : "merchantkaz",
-	"rules" : [[ "maxSpawnCount", [1] ]],
-	"def" : [ "tmx", "merchant_kaz.json" ]
+	"name":"merchantkaz",
+	"rules":[["maxSpawnCount",[1]]],
+	"def":["tmx","merchant_kaz.json"]
 }
 },{
 "op":"add",
 "path":"/parts",
 "value":{
-	"name" : "merchantkazGem",
-	"rules" : [[ "maxSpawnCount", [1] ]],
-	"def" : [ "tmx", "merchant_kazGem.json" ]
+	"name":"merchantkazGem",
+	"rules":[["maxSpawnCount",[1]]],
+	"def":["tmx","merchant_kazGem.json"]
 }
 }]
