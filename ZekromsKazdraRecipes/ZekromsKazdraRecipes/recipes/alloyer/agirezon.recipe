@@ -1,0 +1,8 @@
+{
+"input":[
+	{"item":"resonite","count":5},
+	{"item":"zoastone","count":1}
+],
+"output":{"item":"agirezon","count":6},
+"groups":["alloyer","all"]
+}
