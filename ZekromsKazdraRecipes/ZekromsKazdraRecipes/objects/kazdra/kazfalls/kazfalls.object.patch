@@ -21,7 +21,7 @@
 },{
 "op":"add",
 "path":"/recipeGroup",
-"value":"alloyer"
+"value":"kazfalls"
 },{
 "op":"add",
 "path":"/openSounds",
@@ -33,7 +33,7 @@
 },{
 "op":"add",
 "path":"/uiConfig",
-"value":"/interface/objectcrafting/alloy.config"
+"value":"/interface/objectcrafting/kazfalls.config"
 },{
 "op":"add",
 "path":"/frameCooldown",
