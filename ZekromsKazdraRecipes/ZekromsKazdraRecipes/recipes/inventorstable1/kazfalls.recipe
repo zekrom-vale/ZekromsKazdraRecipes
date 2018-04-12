@@ -1,0 +1,9 @@
+{
+"input":[
+	{"item":"resonite","count":20},
+	{"item":"ironbar","count":6},
+	{"item":"obsidian","count":20}
+],
+"output":{"item":"kazfalls","count":1},
+"groups":[ "inventorstable", "craftingstations", "all"]
+}

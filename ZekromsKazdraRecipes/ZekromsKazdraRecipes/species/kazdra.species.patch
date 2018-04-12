@@ -4,6 +4,10 @@
 "op":"add",
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"kaztable2"}
+},{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"kazfalls"}
 },
 //Tools
 {
@@ -50,6 +54,10 @@
 "op":"add",
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"zoastone"}
+},{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"resoniteGlass"}
 },
 //Tester weapons
 {
@@ -60,8 +68,18 @@
 "op":"add",
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"kazdrastarter"}
+},
+//Armor
+{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"kazdratier5pants"}
+},{
+"op":"add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"kazdratier5head"}
 }
-//Weapon teer 6+ fix (can't test easily)
+//Weapon teer 6+ fix
 ,{
 "op":"add",
 "path":"/defaultBlueprints/tier1/-",
@@ -158,12 +176,4 @@
 "op":"add",
 "path":"/defaultBlueprints/tier1/-",
 "value":{"item":"kazdratier9axe"}
-},{
-"op":"add",
-"path":"/defaultBlueprints/tier1/-",
-"value":{"item":"kazdratier5pants"}
-},{
-"op":"add",
-"path":"/defaultBlueprints/tier1/-",
-"value":{"item":"kazdratier5head"}
 }]
