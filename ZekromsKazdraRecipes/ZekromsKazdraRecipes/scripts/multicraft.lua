@@ -33,6 +33,16 @@ function consumeItemsO(items, prod) --In order
 	for i in items do
 		world.containerConsume(entity.id(), items[i])
 	end
+	for i in prod do
+		if prod[i]["pool"]~=nil then
+			local pool=root.createTreasure(prod[i]["pool"], prod[i]["level"] or 0)
+			table.remove(prod, i)
+			i-=1
+			for l in pool do
+				prod+=pool[l]
+			end
+		end
+	end
 	return world.containerAddItems(entity.id(), prod)
 end
 
