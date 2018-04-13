@@ -1,11 +1,16 @@
-function int()
+function init()
 	overflow={}
 	recipes=root.assetJson(config.getParameter("recipefile"))
 	for key,value in pairs(recipes) do
-		if value["input"]== nil or value["output"]== nil then
+		if value["input"]== nil or value["input"]=={} or value["output"]== nil then
+			sb.logError("Invalid recipe")
+			sb.printJson(value, true)
 			table.remove(recipes, key)
 			key=key-1
 		end
+	end
+	if recipes==nil or recipes=={} then
+		uninit()
 	end
 end
 
@@ -49,26 +54,24 @@ end
 function consumeItems(items, prod) --No order
 	stack=world.containerItems(entity.id())
 	for key,value in pairs(items) do
-		local counts=0
-		for key2,value2 in pairs(stack) do
-			counts=counts+value2["count"]
-			if value["name"]==value2["name"] and value2["count"]>=counts then
-				goto continue
-			end
+		if not world.containerAvailable(entity.id(), value.name)>=value.count then
+			return false
 		end
-		return false
-		::continue::
 	end
 	for key,value in pairs(items) do
 		world.containerConsume(entity.id(), value)
 	end
 	for key,value in pairs(prod) do
 		if value["pool"]~=nil then
-			local pool=root.createTreasure(value["pool"], value["level"] or 0)
-			table.remove(prod, key)
-			key=key-1
-			for key2,value2 in pairs(pool) do
-				table.insert(prod, value2)
+			if root.isTreasurePool(value["pool"]) then
+				local pool=root.createTreasure(value["pool"], value["level"] or 0)
+				table.remove(prod, key)
+				key=key-1
+				for key2,value2 in pairs(pool) do
+					table.insert(prod, value2)
+				end
+			else
+				table.remove(prod, key)
 			end
 		end
 	end
