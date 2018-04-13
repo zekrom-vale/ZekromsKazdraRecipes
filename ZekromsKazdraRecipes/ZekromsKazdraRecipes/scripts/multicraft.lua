@@ -1,27 +1,27 @@
 function init()
-	overflow={}
-	recipes=root.assetJson(config.getParameter("recipefile"))
-	for key,value in pairs(recipes) do
-		if value["input"]== nil or value["input"]=={} or value["output"]== nil then
+	self.overflow={}
+	self.recipes=root.assetJson(config.getParameter("recipefile"))
+	for key,value in pairs(self.recipes) do
+		if value["input"]== nil or value["input"][0]==nil or value["output"]== nil then
 			sb.logError("Invalid recipe")
 			sb.printJson(value, true)
-			table.remove(recipes, key)
+			table.remove(self.recipes, key)
 			key=key-1
 		end
 	end
-	if recipes==nil or recipes=={} then
+	if self.recipes==nil or next(self.recipes)==nil then
 		uninit()
 	end
 end
 
 function update(dt)
-	if not(overflow==nil or overflow=={}) then
-		overflow=world.containerAddItems(entity.id(), overflow)
+	if not(self.overflow==nil or next(self.overflow)==nil) then
+		self.overflow=world.containerAddItems(entity.id(), self.overflow)
 	end
-	if overflow==nil or overflow=={} then
-		for key,value in pairs(recipes) do
-			overflow=consumeItems(value["input"], value["output"])
-			if overflow~=false then
+	if self.overflow==nil or next(self.overflow)==nil then
+		for key,value in pairs(self.recipes) do
+			self.overflow=consumeItems(value["input"], value["output"])
+			if self.overflow~=false then
 				break
 			end
 		end
@@ -30,7 +30,7 @@ end
 
 function consumeItemsO(items, prod) --In order
 	stack=world.containerItems(entity.id())
-	for key.value in pairs(items) do
+	for key,value in pairs(items) do
 		if not(value["name"]==stack[key]["name"] and value["count"]>=stack[key]["count"]) then
 			return false
 		end
