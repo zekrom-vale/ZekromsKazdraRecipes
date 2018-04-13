@@ -1,17 +1,29 @@
 function int()
+	overflow={}
 	recipes=root.assetJson(config.getParameter("recipefile"))
+	for i in recipes do
+		if recipes[i]["input"]== nil or recipes[i]["output"]== nil then
+			table.remove(recipes, i)
+			i-=1
+		end
+	end
 end
 
 function update(dt)
-	for t in recipes do
-		consumeItems(recipes[t]["input"], recipes[t]["output"])
+	if not(overflow==nil or overflow=={}) then
+		overflow=world.containerAddItems(entity.id(), overflow)
+	end
+	if overflow==nil or overflow=={} then
+		for t in recipes do
+			overflow=consumeItems(recipes[t]["input"], recipes[t]["output"])
+			if overflow~=false then
+				break
+			end
+		end
 	end
 end
 
 function consumeItemsO(items, prod) --In order
-	if world.containerItemsCanFit(prod)==0 do
-		return false
-	end
 	stack=world.containerItems(entity.id())
 	for i in items do
 		if not(items[i]["name"]==stack[i]["name"] and items[i]["count"]>=stack[i]["count"]) then
@@ -21,13 +33,10 @@ function consumeItemsO(items, prod) --In order
 	for i in items do
 		world.containerConsume(entity.id(), items[i])
 	end
-	world.containerAddItems(entity.id(), prod)
+	return world.containerAddItems(entity.id(), prod)
 end
 
 function consumeItems(items, prod) --No order
-	if world.containerItemsCanFit(prod)==0 do
-		return false
-	end
 	stack=world.containerItems(entity.id())
 	for i in items do
 		local counts=0
@@ -43,7 +52,7 @@ function consumeItems(items, prod) --No order
 	for i in items do
 		world.containerConsume(entity.id(), items[i])
 	end
-	world.containerAddItems(entity.id(), prod)
+	return world.containerAddItems(entity.id(), prod)
 end
 
 --[[function containsItems(items)
