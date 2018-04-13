@@ -1,10 +1,10 @@
 function int()
 	overflow={}
 	recipes=root.assetJson(config.getParameter("recipefile"))
-	for i in recipes do
-		if recipes[i]["input"]== nil or recipes[i]["output"]== nil then
-			table.remove(recipes, i)
-			i-=1
+	for key,value in pairs(recipes) do
+		if value["input"]== nil or value["output"]== nil then
+			table.remove(recipes, key)
+			key=key-1
 		end
 	end
 end
@@ -14,8 +14,8 @@ function update(dt)
 		overflow=world.containerAddItems(entity.id(), overflow)
 	end
 	if overflow==nil or overflow=={} then
-		for t in recipes do
-			overflow=consumeItems(recipes[t]["input"], recipes[t]["output"])
+		for key,value in pairs(recipes) do
+			overflow=consumeItems(value["input"], value["output"])
 			if overflow~=false then
 				break
 			end
@@ -25,21 +25,21 @@ end
 
 function consumeItemsO(items, prod) --In order
 	stack=world.containerItems(entity.id())
-	for i in items do
-		if not(items[i]["name"]==stack[i]["name"] and items[i]["count"]>=stack[i]["count"]) then
+	for key.value in pairs(items) do
+		if not(value["name"]==stack[key]["name"] and value["count"]>=stack[key]["count"]) then
 			return false
 		end
 	end
-	for i in items do
-		world.containerConsume(entity.id(), items[i])
+	for key,value in pairs(items) do
+		world.containerConsume(entity.id(), value)
 	end
-	for i in prod do
-		if prod[i]["pool"]~=nil then
-			local pool=root.createTreasure(prod[i]["pool"], prod[i]["level"] or 0)
-			table.remove(prod, i)
-			i-=1
-			for l in pool do
-				prod+=pool[l]
+	for key,value in pairs(prod) do
+		if value["pool"]~=nil then
+			local pool=root.createTreasure(value["pool"], value["level"] or 0)
+			table.remove(prod, key)
+			key=key-1
+			for key2,value2 in pairs(pool) do
+				table.insert(prod, value2)
 			end
 		end
 	end
@@ -48,31 +48,29 @@ end
 
 function consumeItems(items, prod) --No order
 	stack=world.containerItems(entity.id())
-	for i in items do
+	for key,value in pairs(items) do
 		local counts=0
-		for l in stack do
-			counts+=stack[l]["count"]
-			if items[i]["name"]==stack[l]["name"] and items[i]["count"]>=counts then
+		for key2,value2 in pairs(stack) do
+			counts=counts+value2["count"]
+			if value["name"]==value2["name"] and value2["count"]>=counts then
 				goto continue
 			end
 		end
 		return false
 		::continue::
 	end
-	for i in items do
-		world.containerConsume(entity.id(), items[i])
+	for key,value in pairs(items) do
+		world.containerConsume(entity.id(), value)
 	end
-	return world.containerAddItems(entity.id(), prod)
-end
-
---[[function containsItems(items)
-	for i in items do
-		for l=0, world.containerSize(entity.id()) do
-			local stack=world.containerItemAt(entity.id(), l)
-			if items[i]["name"]==stack.name then
-				
-				
+	for key,value in pairs(prod) do
+		if value["pool"]~=nil then
+			local pool=root.createTreasure(value["pool"], value["level"] or 0)
+			table.remove(prod, key)
+			key=key-1
+			for key2,value2 in pairs(pool) do
+				table.insert(prod, value2)
 			end
 		end
 	end
-end]]--
+	return world.containerAddItems(entity.id(), prod)
+end
