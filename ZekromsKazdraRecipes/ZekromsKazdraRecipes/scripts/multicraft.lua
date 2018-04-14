@@ -1,11 +1,10 @@
 function init()
-	sb.logInfo("init")
 	self.overflow={}
 	self.recipes=root.assetJson(config.getParameter("recipefile"))
 	for key,value in pairs(self.recipes) do
 		if value["input"]==nil or value["output"]==nil then
-			sb.logError("Invalid recipe")
-			sb.logError(key)
+			sb.logWarn("Invalid recipe")
+			sb.logInfo(key)
 			table.remove(self.recipes, key)
 			key=key-1
 		end
@@ -16,27 +15,23 @@ function init()
 end
 
 function update(dt)
-	sb.logInfo("update")
-	if type(self.overflow)=="table" then
-		sb.logInfo("update|overflow")
-		self.overflow=containerAdd(self.overflow)
-	end
-	if self.overflow==nil or (
-		type(self.overflow)=="table" and next(self.overflow)==nil
-	) then
+	sb.logInfo("updateFN")
+	self.overflow=containerAdd(self.overflow)
+	self.overflow=containerAdd(self.overflow)
+	sb.logInfo("update|overflowDN")
+	if self.overflow==nil then
+		local stack=world.containerItems(entity.id())
 		for key,value in pairs(self.recipes) do
 			sb.logInfo("update|consumeItems")
-			self.overflow=consumeItemsO(value["input"], value["output"])
-			if self.overflow~=false then
-				break
-			end
+			self.overflow=consumeItemsO(value["input"], value["output"], stack)
+			if self.overflow~=false then	break	end
 		end
 	end
 end
 
 function containerAdd(items)
-	if items==nil then return nil end
-	ran,value=pcall(function(items) return world.containerAddItems(entity.id(), items) end)
+	if items==nil then	return nil	end
+	local ran,value=pcall(function(items) return world.containerAddItems(entity.id(), items) end)
 	if ran then
 		return value
 	else
@@ -44,11 +39,13 @@ function containerAdd(items)
 	end
 end
 
-function consumeItemsO(items, prod) --In order
+function consumeItemsO(items, prod, stack) --In order
 	sb.logInfo("consumeItemsO")
-	stack=world.containerItems(entity.id())
 	for key,value in pairs(items) do
 		sb.logInfo("consumeItemsO|Has")
+		if stack[key]==nil then	return false	end
+		sb.logInfo(type(items[key]))
+		sb.logInfo(type(stack[key]))
 		if not(value["name"]==stack[key]["name"] and value["count"]>=stack[key]["count"]) then
 			return false
 		end
@@ -72,9 +69,8 @@ function consumeItemsO(items, prod) --In order
 	return world.containerAddItems(entity.id(), prod)
 end
 
-function consumeItems(items, prod) --No order
+function consumeItems(items, prod, stack) --No order
 	sb.logInfo("consumeItems")
-	stack=world.containerItems(entity.id())
 	for key,value in pairs(items) do
 		sb.logInfo("consumeItems|Has")
 		if world.containerAvailable(entity.id(), value["name"])<value["count"] then
