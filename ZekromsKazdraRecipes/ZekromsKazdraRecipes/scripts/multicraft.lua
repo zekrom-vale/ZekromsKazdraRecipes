@@ -1,5 +1,4 @@
 function init()
-	storage.overflow={}
 	self.recipes=root.assetJson(config.getParameter("recipefile"))
 	for key,value in pairs(self.recipes) do
 		if value["input"]==nil or value["output"]==nil then
@@ -44,9 +43,7 @@ function consumeItemsO(items, prod, stack) --In order
 	for key,value in pairs(items) do
 		sb.logInfo("consumeItemsO|Has")
 		if stack[key]==nil then	return false	end
-		sb.logInfo(type(items[key]))
-		sb.logInfo(type(stack[key]))
-		if not(value["name"]==stack[key]["name"] and value["count"]>=stack[key]["count"]) then
+		if not(value["name"]==stack[key]["name"] and value["count"]<stack[key]["count"]) then
 			return false
 		end
 	end
