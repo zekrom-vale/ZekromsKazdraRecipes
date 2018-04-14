@@ -15,8 +15,8 @@ end
 
 function update(dt)
 	sb.logInfo("updateFN")
-	storage.overflow=containerAdd(storage.overflow)
-	storage.overflow=containerAdd(storage.overflow)
+	storage.overflow=containerTryAdd(storage.overflow)
+	storage.overflow=containerTryAdd(storage.overflow)
 	sb.logInfo("update|overflowDN")
 	if storage.overflow==nil then
 		local stack=world.containerItems(entity.id())
@@ -28,14 +28,24 @@ function update(dt)
 	end
 end
 
-function containerAdd(items)
+function containerTryAdd(items)
 	if items==nil then	return nil	end
-	local ran,value=pcall(function(items) return world.containerAddItems(entity.id(), items) end)
+	local ran,value=pcall(function(items) return containerAddItems(items) end)
 	if ran then
 		return value
 	else
 		return nil
 	end
+end
+
+function containerAddItems(items)
+	local id=entity.id()
+	local arr={}
+	for key,item in pairs(items) do
+		local t=world.containerAddItems(id, item)
+		if type(t)=="table" then table.insert(arr, t) end
+	end
+	return arr
 end
 
 function consumeItemsO(items, prod, stack) --In order
@@ -63,7 +73,7 @@ function consumeItemsO(items, prod, stack) --In order
 		end
 	end
 	sb.logInfo("consumeItems|ret")
-	return world.containerAddItems(entity.id(), prod)
+	return containerAddItems(prod)
 end
 
 function consumeItems(items, prod, stack) --No order
@@ -94,7 +104,7 @@ function consumeItems(items, prod, stack) --No order
 		end
 	end
 	sb.logInfo("consumeItems|ret")
-	return world.containerAddItems(entity.id(), prod)
+	return containerAddItems(prod)
 end
 
 function die()
