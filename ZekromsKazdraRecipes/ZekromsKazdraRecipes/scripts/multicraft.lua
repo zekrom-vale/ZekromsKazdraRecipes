@@ -20,7 +20,7 @@ function update(dt)
 	if type(storage.overflow)~="table" then
 		local stack=world.containerItems(entity.id())
 		for key,value in pairs(self.recipes) do
-			storage.overflow=consumeItemsO(value["input"], value["output"], stack)
+			storage.overflow=consumeItemsO(value.input, value.output, stack)
 			if storage.overflow~=false then	break	end
 		end
 	end
@@ -48,7 +48,7 @@ end
 function consumeItemsO(items, prod, stack) --In order
 	for key,value in pairs(items) do
 		if stack[key]==nil then	return false	end
-		if not(value["name"]==stack[key]["name"] and value["count"]<stack[key]["count"]) then
+		if not(value["name"]==stack[key]["name"] and value["count"]<=stack[key]["count"]) then
 			return false
 		end
 	end
@@ -69,19 +69,25 @@ function consumeItemsO(items, prod, stack) --In order
 end
 
 function consumeItems(items, prod, stack) --No order
-	sb.logInfo("consumeItems")
-	for key,value in pairs(items) do
-		sb.logInfo("consumeItems|Has")
-		if world.containerAvailable(entity.id(), value["name"])<value["count"] then
-			return false --!!Issue!!
+	for key,item in pairs(items) do
+		local counts=0
+		local boolVal=false
+		for key2,value2 in pairs(stack) do
+			counts=counts+value2.count
+			if item.name==value2.name and value2.count<=counts then
+				boolVal=true
+				sb.logInfo("Now True")
+			end
+		end
+		sb.logInfo(tostring(boolVal))
+		if boolVal==false then
+			return false
 		end
 	end
 	for key,value in pairs(items) do
-		sb.logInfo("consumeItems|consume")
 		world.containerConsume(entity.id(), value)
 	end
 	for key,value in pairs(prod) do
-		sb.logInfo("consumeItems|pool")
 		if value["pool"]~=nil then
 			if root.isTreasurePool(value["pool"]) then
 				local pool=root.createTreasure(value["pool"], value["level"] or 0)
@@ -95,7 +101,6 @@ function consumeItems(items, prod, stack) --No order
 			end
 		end
 	end
-	sb.logInfo("consumeItems|ret")
 	return containerAddItems(prod)
 end
 
