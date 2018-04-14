@@ -1,5 +1,5 @@
 function init()
-	self.overflow={}
+	storage.overflow={}
 	self.recipes=root.assetJson(config.getParameter("recipefile"))
 	for key,value in pairs(self.recipes) do
 		if value["input"]==nil or value["output"]==nil then
@@ -16,15 +16,15 @@ end
 
 function update(dt)
 	sb.logInfo("updateFN")
-	self.overflow=containerAdd(self.overflow)
-	self.overflow=containerAdd(self.overflow)
+	storage.overflow=containerAdd(storage.overflow)
+	storage.overflow=containerAdd(storage.overflow)
 	sb.logInfo("update|overflowDN")
-	if self.overflow==nil then
+	if storage.overflow==nil then
 		local stack=world.containerItems(entity.id())
 		for key,value in pairs(self.recipes) do
 			sb.logInfo("update|consumeItems")
-			self.overflow=consumeItemsO(value["input"], value["output"], stack)
-			if self.overflow~=false then	break	end
+			storage.overflow=consumeItemsO(value["input"], value["output"], stack)
+			if storage.overflow~=false then	break	end
 		end
 	end
 end
@@ -98,4 +98,11 @@ function consumeItems(items, prod, stack) --No order
 	end
 	sb.logInfo("consumeItems|ret")
 	return world.containerAddItems(entity.id(), prod)
+end
+
+function die()
+	local poz=entity.position()
+	for key,item in storage.overflow do
+		world.spawnItem(item.name, poz, item.count)
+	end
 end
