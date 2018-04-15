@@ -55,16 +55,7 @@ function consumeItemsO(items, prod, stack) --In order
 	for key,value in pairs(items) do
 		world.containerConsume(entity.id(), value)
 	end
-	for key,value in pairs(prod) do
-		if value["pool"]~=nil then
-			local pool=root.createTreasure(value["pool"], value["level"] or 0)
-			table.remove(prod, key)
-			key=key-1
-			for key2,value2 in pairs(pool) do
-				table.insert(prod, value2)
-			end
-		end
-	end
+	prod=treasure(prod)
 	return containerAddItems(prod)
 end
 
@@ -77,6 +68,7 @@ function consumeItems(items, prod, stack) --No order
 			if item.name==value2.name and value2.count<=counts then
 				boolVal=true
 				sb.logInfo("Now True")
+				--Dupes items
 			end
 		end
 		sb.logInfo(tostring(boolVal))
@@ -87,21 +79,29 @@ function consumeItems(items, prod, stack) --No order
 	for key,value in pairs(items) do
 		world.containerConsume(entity.id(), value)
 	end
-	for key,value in pairs(prod) do
-		if value["pool"]~=nil then
-			if root.isTreasurePool(value["pool"]) then
-				local pool=root.createTreasure(value["pool"], value["level"] or 0)
-				table.remove(prod, key)
+	prod=treasure(prod)
+	return containerAddItems(prod)
+end
+
+function treasure(items)
+	for key,item in pairs(items) do
+		if item.pool~=nil then
+			if root.isTreasurePool(item.pool) then
+				local pool=root.createTreasure(item.pool, item.level or 0)
+				table.remove(items, key)
 				key=key-1
-				for key2,value2 in pairs(pool) do
-					table.insert(prod, value2)
+				for key2,val in pairs(pool) do
+					table.insert(items, val)
 				end
 			else
-				table.remove(prod, key)
+				sb.logWarn("Invalid pool")
+				sb.logWarn(sb.printJson(item,1))
+				table.remove(items, key)
+				key=key-1
 			end
 		end
 	end
-	return containerAddItems(prod)
+	return items
 end
 
 function die()
