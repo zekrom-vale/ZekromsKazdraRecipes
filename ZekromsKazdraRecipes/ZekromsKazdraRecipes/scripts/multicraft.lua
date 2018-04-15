@@ -20,7 +20,7 @@ function update(dt)
 	if type(storage.overflow)~="table" then
 		local stack=world.containerItems(entity.id())
 		for key,value in pairs(self.recipes) do
-			storage.overflow=consumeItemsO(value.input, value.output, stack)
+			storage.overflow=consumeItems(value.input, value.output, stack)
 			if storage.overflow~=false then	break	end
 		end
 	end
@@ -61,20 +61,19 @@ end
 
 function consumeItems(items, prod, stack) --No order
 	for key,item in pairs(items) do
-		local counts=0
-		local boolVal=false
-		for key2,value2 in pairs(stack) do
-			counts=counts+value2.count
-			if item.name==value2.name and value2.count<=counts then
-				boolVal=true
-				sb.logInfo("Now True")
-				--Dupes items
+		if 1==1 then
+			local counts=0
+			for key2,value2 in pairs(stack) do
+				if item.name==value2.name then
+					counts=counts+value2.count
+					if item.count<=counts then
+						goto skip
+					end
+				end
 			end
+			return false --Must be last statement in a block
 		end
-		sb.logInfo(tostring(boolVal))
-		if boolVal==false then
-			return false
-		end
+		::skip::
 	end
 	for key,value in pairs(items) do
 		world.containerConsume(entity.id(), value)
