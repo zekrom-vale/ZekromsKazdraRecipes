@@ -1,5 +1,7 @@
 function init()
 	--self.clock=0
+	self.input=config.getParameter("input", nil)
+	self.output=config.getParameter("output", nil)
 	self.recipes=root.assetJson(config.getParameter("recipefile"))
 	for key,value in pairs(self.recipes) do
 		if value["input"]==nil or value["output"]==nil then
@@ -107,5 +109,31 @@ function die()
 	local poz=entity.position()
 	for key,item in storage.overflow do
 		world.spawnItem(item.name, poz, item.count)
+	end
+end
+
+function containerConsumeAt(item, range)
+	for offset=range[0],range[1] do
+		local stack=world.containerItemAt(entity.id(), offset)
+		if stack.name==item.name then
+			world.containerConsumeAt(entity.id(), offset, item.count)
+			item.count=item.count-stack.count
+			if item.count<=0 then
+				return
+			end
+		end
+	end
+end
+
+function containerPutItemsAt(item, range)
+	for offset=range[0],range[1] do
+		local stack=world.containerItemAt(entity.id(), offset)
+		if stack.name==item.name then
+			world.containerPutItemsAt(entity.id(), item, offset)
+			item.count=item.count-stack.count
+			if item.count<=0 then
+				return
+			end
+		end
 	end
 end

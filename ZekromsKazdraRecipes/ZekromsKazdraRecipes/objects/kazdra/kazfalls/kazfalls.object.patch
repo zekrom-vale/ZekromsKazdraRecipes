@@ -36,6 +36,14 @@
 "op":"add",
 "path":"/recipefile",
 "value":"/objects/kazdra/kazfalls/kazfalls.config"
+},{
+"op":"add",
+"path":"/input",
+"value":[0,1]
+},{
+"op":"add",
+"path":"/output",
+"value":[2,2]
 },
 //==================
 {
