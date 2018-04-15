@@ -10,9 +10,6 @@ function init()
 			key=key-1
 		end
 	end
-	--[[if self.recipes==nil or next(self.recipes)==nil then
-		uninit()
-	end]]
 end
 
 function update(dt)
@@ -40,10 +37,9 @@ function containerAddItems(items)
 	local id=entity.id()
 	local arr={}
 	for key,item in pairs(items) do
-		local t=world.containerAddItems(id, item)
+		local t=containerPutAt(item, self.output)
 		if type(t)=="table" then table.insert(arr, t) end
 	end
-	sb.logInfo(sb.printJson(arr,1))
 	return arr
 end
 
@@ -55,7 +51,7 @@ function consumeItemsO(items, prod, stack) --In order
 		end
 	end
 	for key,value in pairs(items) do
-		world.containerConsume(entity.id(), value)
+		containerConsumeAt(value, self.input)
 	end
 	prod=treasure(prod)
 	return containerAddItems(prod)
@@ -78,7 +74,7 @@ function consumeItems(items, prod, stack) --No order
 		::skip::
 	end
 	for key,value in pairs(items) do
-		world.containerConsume(entity.id(), value)
+		containerConsumeAt(value, self.input)
 	end
 	prod=treasure(prod)
 	return containerAddItems(prod)
@@ -113,27 +109,27 @@ function die()
 end
 
 function containerConsumeAt(item, range)
-	for offset=range[0],range[1] do
+	sb.logInfo(sb.printJson(range))
+	for offset=range[1],range[2] do
 		local stack=world.containerItemAt(entity.id(), offset)
-		if stack.name==item.name then
+		if stack~=nil and stack.name==item.name then
 			world.containerConsumeAt(entity.id(), offset, item.count)
 			item.count=item.count-stack.count
-			if item.count<=0 then
-				return
-			end
+			if item.count<=0 then	return true	end
 		end
 	end
+	return false
 end
 
-function containerPutItemsAt(item, range)
-	for offset=range[0],range[1] do
+function containerPutAt(item, range)
+	sb.logInfo(sb.printJson(range))
+	for offset=range[1],range[2] do
 		local stack=world.containerItemAt(entity.id(), offset)
-		if stack.name==item.name then
+		if stack~=nil and stack.name==item.name then
 			world.containerPutItemsAt(entity.id(), item, offset)
 			item.count=item.count-stack.count
-			if item.count<=0 then
-				return
-			end
+			if item.count<=0 then	return true	end
 		end
 	end
+	return items
 end

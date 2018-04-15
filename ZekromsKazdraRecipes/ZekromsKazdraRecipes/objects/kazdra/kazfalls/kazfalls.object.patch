@@ -39,11 +39,11 @@
 },{
 "op":"add",
 "path":"/input",
-"value":[0,1]
+"value":[0,1] //Note starts at 0?
 },{
 "op":"add",
 "path":"/output",
-"value":[2,2]
+"value":[2,2] //Note starts at 0?
 },
 //==================
 {
