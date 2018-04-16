@@ -103,18 +103,21 @@ function consumeItems(items, prod, stack, delay) --No order
 	return containerAddItems(prod)
 end
 
-function treasure(items)
+function treasure(pass)
+	local items=deepcopy(pass)
+	sb.logInfo("treasure")
 	for key,item in pairs(items) do
 		sb.logInfo(sb.printJson(item))
 		if item.pool~=nil then
 			if root.isTreasurePool(item.pool) then
-				local pool=root.createTreasure(item.pool, item.level or 0)
+				local pool=root.createTreasure(item.pool, item.level or 0, math.randomseed(storage.clock))
 				sb.logInfo(sb.printJson(pool))
 				table.remove(items, key)
 				key=key-1
 				for key2,val in pairs(pool) do
 					table.insert(items, val)
 				end
+				--Changes the recipe output
 			else
 				sb.logWarn("Invalid pool")
 				sb.logWarn(sb.printJson(item,1))
@@ -159,4 +162,20 @@ function containerPutAt(item, range)
 		end
 	end
 	return items
+end
+
+--http://lua-users.org/wiki/CopyTable
+function deepcopy(orig)
+	local orig_type = type(orig)
+	local copy
+	if orig_type == 'table' then
+		copy = {}
+		for orig_key, orig_value in next, orig, nil do
+			copy[deepcopy(orig_key)] = deepcopy(orig_value)
+		end
+		setmetatable(copy, deepcopy(getmetatable(orig)))
+	else -- number, string, boolean, etc
+		copy = orig
+	end
+	return copy
 end
