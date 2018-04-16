@@ -1,5 +1,7 @@
 function init()
-	--self.clock=0
+	if storage.clock==nil then
+		storage.clock=0
+	end
 	self.input=config.getParameter("input", nil)
 	self.output=config.getParameter("output", nil)
 	self.recipes=root.assetJson(config.getParameter("recipefile"))
@@ -13,13 +15,20 @@ function init()
 end
 
 function update(dt)
-	--self.clock=self.clock+1
+	storage.clock=(storage.clock+1)%1000000
+	if storage.wait==storage.clock then
+		storage.overflow=containerAddItems(storage.overflow)
+		storage.wait=nil
+		return
+	elseif storage.wait~=nil and storage.wait~=0 then
+		return
+	end
 	storage.overflow=containerTryAdd(storage.overflow)
 	storage.overflow=containerTryAdd(storage.overflow)
 	if type(storage.overflow)~="table" then
 		local stack=world.containerItems(entity.id())
 		for key,value in pairs(self.recipes) do
-			storage.overflow=consumeItems(value.input, value.output, stack)
+			storage.overflow=consumeItems(value.input, value.output, stack, value.delay)
 			if storage.overflow~=false then	break	end
 		end
 	end
@@ -43,7 +52,7 @@ function containerAddItems(items)
 	return arr
 end
 
-function consumeItemsO(items, prod, stack) --In order
+function consumeItemsO(items, prod, stack, delay) --In order
 	for key,value in pairs(items) do
 		if stack[key]==nil then	return false	end
 		if not(value["name"]==stack[key]["name"] and value["count"]<=stack[key]["count"]) then
@@ -54,10 +63,15 @@ function consumeItemsO(items, prod, stack) --In order
 		containerConsumeAt(value, self.input)
 	end
 	prod=treasure(prod)
+	if not(delay==nil or delay==0) then
+		storage.overflow=prod
+		storage.wait=(storage.clock+delay)%1000000
+		return true
+	end
 	return containerAddItems(prod)
 end
 
-function consumeItems(items, prod, stack) --No order
+function consumeItems(items, prod, stack, delay) --No order
 	for key,item in pairs(items) do
 		if 1==1 then
 			local counts=0
@@ -77,6 +91,11 @@ function consumeItems(items, prod, stack) --No order
 		containerConsumeAt(value, self.input)
 	end
 	prod=treasure(prod)
+	if not(delay==nil or delay==0) then
+		storage.overflow=prod
+		storage.wait=(storage.clock+delay)%1000000
+		return true
+	end
 	return containerAddItems(prod)
 end
 
