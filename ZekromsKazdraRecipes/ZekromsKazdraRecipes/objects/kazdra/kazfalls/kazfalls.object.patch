@@ -31,7 +31,7 @@
 },{
 "op":"add",
 "path":"/scriptDelta",
-"value":2500
+"value":25
 },{
 "op":"add",
 "path":"/recipefile",

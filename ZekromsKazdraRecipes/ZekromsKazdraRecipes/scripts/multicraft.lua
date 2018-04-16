@@ -20,7 +20,7 @@ function update(dt)
 		storage.overflow=containerAddItems(storage.overflow)
 		storage.wait=nil
 		return
-	elseif storage.wait~=nil and storage.wait~=0 then
+	elseif not(storage.wait==nil or storage.wait==0) then
 		return
 	end
 	storage.overflow=containerTryAdd(storage.overflow)
@@ -64,9 +64,8 @@ function consumeItemsO(items, prod, stack, delay) --In order
 	end
 	prod=treasure(prod)
 	if not(delay==nil or delay==0) then
-		storage.overflow=prod
 		storage.wait=(storage.clock+delay)%1000000
-		return true
+		return prod
 	end
 	return containerAddItems(prod)
 end
@@ -92,9 +91,8 @@ function consumeItems(items, prod, stack, delay) --No order
 	end
 	prod=treasure(prod)
 	if not(delay==nil or delay==0) then
-		storage.overflow=prod
 		storage.wait=(storage.clock+delay)%1000000
-		return true
+		return prod
 	end
 	return containerAddItems(prod)
 end
