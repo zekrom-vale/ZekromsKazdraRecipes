@@ -5,45 +5,55 @@ function init()
 	local size=world.containerSize(entity.id())
 	self.input=config.getParameter("input", {1, size})
 	self.output=config.getParameter("output", {1, size})
-	self.recipes=root.assetJson(config.getParameter("recipefile"))
+	self.recipes=root.assetJson(config.getParameter("recipefile"),nil)
+	if self.recipes==nil then
+		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+		sb.logError("No recipe file defined for "..sb.name())
+	end
 	if self.input[3]~=nil or self.output[3]~=nil then
-		sb.logInfo("Input/output array is not 2 elements, ignoring the other ones")
+		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+		sb.logInfo("Input/output array is not 2 elements for "..sb.name()..".  Ignoring the other ones")
 	end
 	if self.input[1]>self.input[2] then
 		local t=self.input[2]
 		self.input[1]=self.input[2]
 		self.input[2]=t
-		sb.logInfo("Input values swapped, please use [small, large]")
+		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+		sb.logInfo("Input values swapped, please use [small, large] for "..sb.name())
 		t=nil
 	end
 	if self.output[1]>self.output[2] then
 		local t=self.output[2]
 		self.output[1]=self.output[2]
 		self.output[2]=t
-		sb.logInfo("Output values swapped, please use [small, large]")
+		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+		sb.logInfo("Output values swapped, please use [small, large] for "..sb.name())
 		t=nil
 	end
 	for key,value in pairs(self.recipes) do
 		if value.input==nil or value.output==nil then
-			sb.logWarn("Input/output missing")
+			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+			sb.logWarn("Input/output missing for "..sb.name())
 			sb.logWarn(sb.printJson(value,1))
 			table.remove(self.recipes, key)
 			key=key-1
 			goto testEnd
 		elseif #value.input>self.input[2]-self.input[1]+1 then
-			sb.logWarn("Input overflow")
+			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+			sb.logWarn("Input overflow in "..sb.name())
 			sb.logWarn(sb.printJson(value,1))
 			table.remove(self.recipes, key)
 			key=key-1
 			goto testEnd
 		elseif #value.output>self.output[2]-self.output[1]+1 then
-			sb.logInfo("Output overflow")
+			sb.logInfo("Output overflow in "..sb.name())
 			sb.logInfo(sb.printJson(value,1))
 		end
 		for _,out in pairs(value.output) do
 			if out.pool==nil then	break	end
 			if root.isTreasurePool(out.pool)==false then
-				sb.logWarn("Invalid pool")
+				sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+				sb.logWarn("Invalid pool in "..sb.name())
 				sb.logWarn(sb.printJson(value,1))
 				table.remove(self.recipes, key)
 				key=key-1
@@ -52,6 +62,17 @@ function init()
 		end
 		::testEnd::
 	end
+end
+
+function sb.name()
+	local name=config.getParameter("objectName")
+	if name~=nil then
+		local name=config.getParameter("itemName")
+	end
+	if name==nil then
+		return "null"
+	end
+	return "\""..name.."\""
 end
 
 function update(dt)
