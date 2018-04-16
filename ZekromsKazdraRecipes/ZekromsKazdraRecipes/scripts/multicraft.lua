@@ -59,8 +59,9 @@ end
 
 function consumeItemsShaped(items, prod, stack, delay) --In order
 	for key,value in pairs(items) do
-		if stack[key]==nil then	return false	end
-		if not(value["name"]==stack[key]["name"] and value["count"]<=stack[key]["count"]) then
+		local value2=stack[key+self.input[1]-1]
+		if value2==nil then	return false	end
+		if not(value["name"]==value2["name"] and value["count"]<=value2["count"]) then
 			return false
 		end
 	end
@@ -77,7 +78,7 @@ end
 
 function consumeItems(items, prod, stack, delay) --No order
 	for key,item in pairs(items) do
-		if 1==1 then
+		if true then
 			local counts=0
 			for index=self.input[1],self.input[2] do
 				if stack[index]~=nil and item.name==stack[index]["name"] then
