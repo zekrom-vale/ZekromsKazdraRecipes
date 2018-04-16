@@ -1,8 +1,0 @@
-{
-"input":[
-	{"item":"liquidwater","count":1},
-	{"item":"liquidlava","count":1}
-],
-"output":{"item":"obsidian","count":1},
-"groups":["kazfalls","all"]
-}

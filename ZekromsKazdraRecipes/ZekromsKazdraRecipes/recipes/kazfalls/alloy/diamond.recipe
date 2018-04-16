@@ -1,8 +1,0 @@
-{
-"input":[
-	{"item":"coalore","count":300},
-	{"item":"liquidlava","count":40}
-],
-"output":{"item":"diamond","count":1},
-"groups":["kazfalls","all"]
-}
