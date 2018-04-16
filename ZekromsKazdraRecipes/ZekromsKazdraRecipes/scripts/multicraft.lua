@@ -2,15 +2,57 @@ function init()
 	if storage.clock==nil then
 		storage.clock=0
 	end
-	self.input=config.getParameter("input", nil)
-	self.output=config.getParameter("output", nil)
+	local size=world.containerSize(entity.id())
+	self.input=config.getParameter("input", {1, size})
+	self.output=config.getParameter("output", {1, size})
 	self.recipes=root.assetJson(config.getParameter("recipefile"))
+	if self.input[3]~=nil or self.output[3]~=nil then
+		sb.logInfo("Input/output array is not 2 elements, ignoring the other ones")
+	end
+	if self.input[1]>self.input[2] then
+		local t=self.input[2]
+		self.input[1]=self.input[2]
+		self.input[2]=t
+		sb.logInfo("Input values swapped, please use [small, large]")
+		t=nil
+	end
+	if self.output[1]>self.output[2] then
+		local t=self.output[2]
+		self.output[1]=self.output[2]
+		self.output[2]=t
+		sb.logInfo("Output values swapped, please use [small, large]")
+		t=nil
+	end
 	for key,value in pairs(self.recipes) do
-		if value["input"]==nil or value["output"]==nil then
+		if value.input==nil or value.output==nil then
+			sb.logWarn("Input/output missing")
 			sb.logWarn(sb.printJson(value,1))
 			table.remove(self.recipes, key)
 			key=key-1
+			goto testEnd
+		elseif #value.input>self.input[2]-self.input[1]+1 then
+			sb.logWarn("Input overflow")
+			sb.logWarn(sb.printJson(value,1))
+			table.remove(self.recipes, key)
+			key=key-1
+			goto testEnd
+		elseif #value.output>self.output[2]-self.output[1]+1 then
+			sb.logInfo("Output overflow")
+			sb.logInfo(sb.printJson(value,1))
+			--table.remove(self.recipes, key)
+			--key=key-1
 		end
+		for _,out in pairs(value.output) do
+			if out.pool==nil then	break	end
+			if root.isTreasurePool(out.pool)==false then
+				sb.logWarn("Invalid pool")
+				sb.logWarn(sb.printJson(value,1))
+				table.remove(self.recipes, key)
+				key=key-1
+				goto testEnd
+			end
+		end
+		::testEnd::
 	end
 end
 
@@ -27,7 +69,7 @@ function update(dt)
 	storage.overflow=containerTryAdd(storage.overflow)
 	if type(storage.overflow)~="table" then
 		local stack=world.containerItems(entity.id())
-		for key,value in pairs(self.recipes) do
+		for _,value in pairs(self.recipes) do
 			if value.shaped then
 				storage.overflow=consumeItemsShaped(value.input, value.output, stack, value.delay)
 				if storage.overflow~=false then	break	end
@@ -77,22 +119,20 @@ function consumeItemsShaped(items, prod, stack, delay) --In order
 end
 
 function consumeItems(items, prod, stack, delay) --No order
-	for key,item in pairs(items) do
+	for _,item in pairs(items) do
 		if true then
 			local counts=0
 			for index=self.input[1],self.input[2] do
 				if stack[index]~=nil and item.name==stack[index]["name"] then
 					counts=counts+stack[index]["count"]
-					if item.count<=counts then
-						goto skip
-					end
+					if item.count<=counts then	goto skip	end
 				end
 			end
 			return false --Must be last statement in a block
 		end
 		::skip::
 	end
-	for key,value in pairs(items) do
+	for _,value in pairs(items) do
 		containerConsumeAt(value, self.input)
 	end
 	prod=treasure(prod)
@@ -105,25 +145,16 @@ end
 
 function treasure(pass)
 	local items=deepcopy(pass)
-	sb.logInfo("treasure")
 	for key,item in pairs(items) do
-		sb.logInfo(sb.printJson(item))
 		if item.pool~=nil then
-			if root.isTreasurePool(item.pool) then
-				local pool=root.createTreasure(item.pool, item.level or 0, math.randomseed(storage.clock))
-				sb.logInfo(sb.printJson(pool))
-				table.remove(items, key)
-				key=key-1
-				for key2,val in pairs(pool) do
-					table.insert(items, val)
-				end
-				--Changes the recipe output
-			else
-				sb.logWarn("Invalid pool")
-				sb.logWarn(sb.printJson(item,1))
-				table.remove(items, key)
-				key=key-1
+			local pool=root.createTreasure(item.pool, item.level or 0, math.randomseed(storage.clock))
+			sb.logInfo(sb.printJson(pool))
+			table.remove(items, key)
+			key=key-1
+			for _,val in pairs(pool) do
+				table.insert(items, val)
 			end
+			--Changes the recipe output
 		end
 	end
 	return items
@@ -131,7 +162,7 @@ end
 
 function die()
 	local poz=entity.position()
-	for key,item in storage.overflow do
+	for _,item in storage.overflow do
 		world.spawnItem(item.name, poz, item.count)
 	end
 end
