@@ -105,9 +105,11 @@ end
 
 function treasure(items)
 	for key,item in pairs(items) do
+		sb.logInfo(sb.printJson(item))
 		if item.pool~=nil then
 			if root.isTreasurePool(item.pool) then
 				local pool=root.createTreasure(item.pool, item.level or 0)
+				sb.logInfo(sb.printJson(pool))
 				table.remove(items, key)
 				key=key-1
 				for key2,val in pairs(pool) do

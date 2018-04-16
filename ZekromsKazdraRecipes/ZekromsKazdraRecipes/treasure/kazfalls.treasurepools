@@ -1,0 +1,8 @@
+{"kazfallsDiamond":[[0,{
+	"pool":[
+		{"weight":0.2,"item":"diamond"},
+		{"weight":0.05,"item":["diamond",2]},
+		{"weight":0.4,"item":["coalore", 200]},
+		{"weight":0.35,"item":["coalore", 20]}
+	]
+}]]}
