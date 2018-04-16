@@ -28,8 +28,13 @@ function update(dt)
 	if type(storage.overflow)~="table" then
 		local stack=world.containerItems(entity.id())
 		for key,value in pairs(self.recipes) do
-			storage.overflow=consumeItems(value.input, value.output, stack, value.delay)
-			if storage.overflow~=false then	break	end
+			if value.shaped then
+				storage.overflow=consumeItemsShaped(value.input, value.output, stack, value.delay)
+				if storage.overflow~=false then	break	end
+			else
+				storage.overflow=consumeItems(value.input, value.output, stack, value.delay)
+				if storage.overflow~=false then	break	end
+			end
 		end
 	end
 end
@@ -52,7 +57,7 @@ function containerAddItems(items)
 	return arr
 end
 
-function consumeItemsO(items, prod, stack, delay) --In order
+function consumeItemsShaped(items, prod, stack, delay) --In order
 	for key,value in pairs(items) do
 		if stack[key]==nil then	return false	end
 		if not(value["name"]==stack[key]["name"] and value["count"]<=stack[key]["count"]) then
