@@ -21,29 +21,29 @@
 }/*,{
 "op":"add",
 "path":"/recipeGroup",
-"value":"kazfalls"
+"value":"kazfalls"//Unnecessary as we use a custom crafting API
 }*/
 //==================
 ,{
 "op":"add",
 "path":"/scripts",
-"value":["/scripts/multicraft.lua"]
+"value":["/scripts/multicraft.lua"]//Point to the crafting script
 },{
 "op":"add",
 "path":"/scriptDelta",
-"value":25
+"value":25//Change this to modify the clock interval (as well as how often the script runs)
 },{
 "op":"add",
 "path":"/recipefile",
-"value":"/objects/kazdra/kazfalls/kazfalls.config"
+"value":"/objects/kazdra/kazfalls/kazfalls.config"//Points to the recipe JSON file
 },{
 "op":"add",
 "path":"/input",
-"value":[1,2]
+"value":[1,2]//Input slots inclusive (container slot 1 is 1)
 },{
 "op":"add",
 "path":"/output",
-"value":[3,3]
+"value":[3,3]//Output slots inclusive (container slot 1 is 1)
 },
 //==================
 {
@@ -53,11 +53,11 @@
 },{
 "op":"add",
 "path":"/slotCount",
-"value":3
+"value":3//MUST change this to obey "uiConfig"
 },{
 "op":"add",
 "path":"/uiConfig",
-"value":"/interface/objectcrafting/kazfalls.config"
+"value":"/interface/objectcrafting/kazfalls.config"//Indicates how to display the UI
 },{
 "op":"add",
 "path":"/frameCooldown",
