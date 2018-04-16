@@ -39,8 +39,6 @@ function init()
 		elseif #value.output>self.output[2]-self.output[1]+1 then
 			sb.logInfo("Output overflow")
 			sb.logInfo(sb.printJson(value,1))
-			--table.remove(self.recipes, key)
-			--key=key-1
 		end
 		for _,out in pairs(value.output) do
 			if out.pool==nil then	break	end
@@ -58,15 +56,15 @@ end
 
 function update(dt)
 	storage.clock=(storage.clock+1)%1000000
-	if storage.wait==storage.clock then
-		storage.overflow=containerAddItems(storage.overflow)
+	if storage.wait~=nil and storage.wait==storage.clock then
+		storage.overflow=containerTryAdd(storage.overflow)
 		storage.wait=nil
 		return
-	elseif not(storage.wait==nil or storage.wait==0) then
+	elseif storage.wait~=nil then
 		return
 	end
 	storage.overflow=containerTryAdd(storage.overflow)
-	storage.overflow=containerTryAdd(storage.overflow)
+	--storage.overflow=containerTryAdd(storage.overflow)
 	if type(storage.overflow)~="table" then
 		local stack=world.containerItems(entity.id())
 		for _,value in pairs(self.recipes) do
@@ -92,7 +90,7 @@ end
 function containerAddItems(items)
 	local id=entity.id()
 	local arr={}
-	for key,item in pairs(items) do
+	for _,item in pairs(items) do
 		local t=containerPutAt(item, self.output)
 		if type(t)=="table" then table.insert(arr, t) end
 	end
@@ -107,7 +105,7 @@ function consumeItemsShaped(items, prod, stack, delay) --In order
 			return false
 		end
 	end
-	for key,value in pairs(items) do
+	for _,value in pairs(items) do
 		containerConsumeAt(value, self.input)
 	end
 	prod=treasure(prod)
@@ -148,13 +146,11 @@ function treasure(pass)
 	for key,item in pairs(items) do
 		if item.pool~=nil then
 			local pool=root.createTreasure(item.pool, item.level or 0, math.randomseed(storage.clock))
-			sb.logInfo(sb.printJson(pool))
 			table.remove(items, key)
 			key=key-1
 			for _,val in pairs(pool) do
 				table.insert(items, val)
 			end
-			--Changes the recipe output
 		end
 	end
 	return items
@@ -192,7 +188,7 @@ function containerPutAt(item, range)
 			end
 		end
 	end
-	return items
+	return item
 end
 
 --http://lua-users.org/wiki/CopyTable
