@@ -61,9 +61,9 @@ function consumeItems(items, prod, stack) --No order
 	for key,item in pairs(items) do
 		if 1==1 then
 			local counts=0
-			for key2,value2 in pairs(stack) do
-				if item.name==value2.name then
-					counts=counts+value2.count
+			for index=self.input[1],self.input[2] do
+				if stack[index]~=nil and item.name==stack[index]["name"] then
+					counts=counts+stack[index]["count"]
 					if item.count<=counts then
 						goto skip
 					end
@@ -109,26 +109,28 @@ function die()
 end
 
 function containerConsumeAt(item, range)
-	sb.logInfo(sb.printJson(range))
+	local stack=world.containerItems(entity.id())
 	for offset=range[1],range[2] do
-		local stack=world.containerItemAt(entity.id(), offset)
-		if stack~=nil and stack.name==item.name then
-			world.containerConsumeAt(entity.id(), offset, item.count)
-			item.count=item.count-stack.count
-			if item.count<=0 then	return true	end
+		if stack[offset]~=nil and stack[offset]["name"]==item.name then
+			if stack[offset]["count"]>=item.count then
+				world.containerConsumeAt(entity.id(), offset-1, item.count)
+				return true
+			end
+			item.count=item.count-stack[offset]["count"]
+			world.containerTakeAt(entity.id(), offset)
 		end
 	end
 	return false
 end
 
 function containerPutAt(item, range)
-	sb.logInfo(sb.printJson(range))
+	local stack=world.containerItems(entity.id())
 	for offset=range[1],range[2] do
-		local stack=world.containerItemAt(entity.id(), offset)
-		if stack~=nil and stack.name==item.name then
-			world.containerPutItemsAt(entity.id(), item, offset)
-			item.count=item.count-stack.count
-			if item.count<=0 then	return true	end
+		if stack[offset]==nil or stack[offset]["name"]==item.name then
+			item=world.containerPutItemsAt(entity.id(), item, offset-1)
+			if item==nil or next(item)==nil or item.count<=0 then
+				return true
+			end
 		end
 	end
 	return items
