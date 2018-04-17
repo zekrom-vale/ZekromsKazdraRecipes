@@ -9,7 +9,8 @@ function Zcontainer.tryAdd(items)
 	end
 end
 
-function Zcontainer.addItems(items)
+function Zcontainer.addItems(pass)
+	item=Zutil.deepcopy(pass)
 	local id=entity.id()
 	local arr={}
 	for _,item in pairs(items) do
@@ -34,7 +35,8 @@ function Zcontainer.treasure(pass)
 	return items
 end
 
-function Zcontainer.consumeAt(item, range)
+function Zcontainer.consumeAt(pass, range)
+	item=Zutil.deepcopy(pass)
 	local stack=world.containerItems(entity.id())
 	for offset=range[1],range[2] do
 		if stack[offset]~=nil and stack[offset]["name"]==item.name then
@@ -49,7 +51,8 @@ function Zcontainer.consumeAt(item, range)
 	return false
 end
 
-function Zcontainer.putAt(item, range)
+function Zcontainer.putAt(pass, range)
+	item=Zutil.deepcopy(pass)
 	local stack=world.containerItems(entity.id())
 	for offset=range[1],range[2] do
 		if stack[offset]==nil or stack[offset]["name"]==item.name then
@@ -60,4 +63,24 @@ function Zcontainer.putAt(item, range)
 		end
 	end
 	return item
+end
+
+function Zcontainer.canFitAt(pass, range)
+	item=Zutil.deepcopy(pass)
+	local stack=world.containerItems(entity.id())
+	for offset=range[1],range[2] do
+		if stack[offset]==nil or stack[offset]["name"]==item.name then
+			item=world.containerPutItemsAt(entity.id(), item, offset-1)
+			local ok=world.containerSwapItemsNoCombine(entity.id(), stack[offset], offset-1)
+			if ok==false then
+				Zutil.API()
+				sb.logWarn("Item duplicated at: "..Zutil.sbName())
+				sb.logWarn("Item name: " item.name)
+			end
+		end
+	end
+	if item==nil or next(item)==nil or item.count>=0 then
+		return true
+	end
+	return false
 end
