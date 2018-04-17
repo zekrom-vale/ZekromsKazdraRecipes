@@ -2,68 +2,84 @@ function init()
 	if storage.clock==nil then
 		storage.clock=0
 	end
-	local size=world.containerSize(entity.id())
 	self.input=config.getParameter("multicraftAPI.input", {1, size})
 	self.output=config.getParameter("multicraftAPI.output", {1, size})
-	self.recipes=root.assetJson(config.getParameter("multicraftAPI.recipefile"),nil)
-	if self.recipes==nil then
-		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logError("No recipe file defined for "..sbName())
+	self.recipes=root.assetJson(config.getParameter("multicraftAPI.recipefile"),{})
+	self.clockMax=math.floor(config.getParameter("multicraftAPI.clockMax",10000))
+	verify()
+end
+
+function verify()
+	if #self.input>2 or #self.output>2 then
+		logModAPI()
+		sb.logInfo("Input/output array is not 2 elements for: "..sbName()..".  Ignoring the other ones")
 	end
-	if self.input[3]~=nil or self.output[3]~=nil then
-		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logInfo("Input/output array is not 2 elements for "..sbName()..".  Ignoring the other ones")
-	end
+	local size=world.containerSize(entity.id())
+	self.input={fixIO(self.input[1],size) or 1, fixIO(self.input[2],size) or size}
+	self.output={fixIO(self.output[1],size) or 1, fixIO(self.output[2],size) or size}
+
 	if self.input[1]>self.input[2] then
 		local t=self.input[2]
 		self.input[1]=self.input[2]
 		self.input[2]=t
 		t=nil
-		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logInfo("Input values swapped, please use [small, large] for "..sbName())
+		logModAPI()
+		sb.logInfo("Input values swapped, please use [small, large] for: "..sbName())
 	end
 	if self.output[1]>self.output[2] then
 		local t=self.output[2]
 		self.output[1]=self.output[2]
 		self.output[2]=t
 		t=nil
-		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logInfo("Output values swapped, please use [small, large] for "..sbName())
+		logModAPI()
+		sb.logInfo("Output values swapped, please use [small, large] for: "..sbName())
+	end
+	verifyIn()
+	if next(self.recipes)==nil then
+		logModAPI()
+		sb.logError("No recipe file defined for: "..sbName())
+	end
+end
+
+function fixIO(item,size)
+	if item==nil or type(item)~="number" or item%1~=0 or item>size or item<=0 then
+		logModAPI()
+		sb.logWarn("Input/output array is not 2 elements for: "..sbName()..".  Trying to compensate")
+		return nil
+	end
+	return item
+end
+
+function verifyIn()
+	local act=function(value,key)
+		sb.logInfo(sb.printJson(value,1))
+		table.remove(self.recipes, key)
+		return key-1
 	end
 	for key,value in pairs(self.recipes) do
 		if value.input==nil or value.output==nil then
-			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-			sb.logWarn("Input/output missing for "..sbName())
-			sb.logWarn(sb.printJson(value,1))
-			table.remove(self.recipes, key)
-			key=key-1
+			logModAPI(); sb.logWarn("Input/output missing for: "..sbName())
+			key=act(value,key)
 			goto testEnd
 		elseif #value.input>self.input[2]-self.input[1]+1 then
-			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-			sb.logWarn("Input overflow in "..sbName())
-			sb.logWarn(sb.printJson(value,1))
-			table.remove(self.recipes, key)
-			key=key-1
+			logModAPI(); sb.logWarn("Input overflow in: "..sbName())
+			key=act(value,key)
 			goto testEnd
 		elseif #value.output>self.output[2]-self.output[1]+1 then
-			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-			sb.logInfo("Output overflow in "..sbName())
+			logModAPI(); sb.logInfo("Output overflow in: "..sbName())
 			sb.logInfo(sb.printJson(value,1))
 		end
 		if value.delay~=nil and value.delay%1~=0 then
-			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-			sb.logInfo("Dellay is not an int in "..sbName())
+			logModAPI(); sb.logInfo("Dellay is not an 'int' in: "..sbName())
 			sb.logInfo(sb.printJson(value,1))
 			value.delay=math.floor(value.delay)
 		end
 		for _,out in pairs(value.output) do
 			if out.pool==nil then	break	end
-			if root.isTreasurePool(out.pool)==false then
-				sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-				sb.logWarn("Invalid pool in "..sbName())
-				sb.logWarn(sb.printJson(value,1))
-				table.remove(self.recipes, key)
-				key=key-1
+			if not root.isTreasurePool(out.pool) then
+				logModAPI()
+				sb.logWarn("Invalid pool in: "..sbName())
+				key=act(value,key)
 				goto testEnd
 			end
 		end
@@ -71,19 +87,19 @@ function init()
 	end
 end
 
+
+function logModAPI()
+	sb.logInfo("---  API mod: 'ZekromsMulticraftAPI'  ---")
+end
+
 function sbName()
 	local name=config.getParameter("objectName")
-	if name~=nil then
-		local name=config.getParameter("itemName")
-	end
-	if name==nil then
-		return "null"
-	end
-	return "\""..name.."\""
+	if name~=nil then	name=config.getParameter("itemName")	end
+	return "'"..(name or "null").."'"
 end
 
 function update(dt)
-	storage.clock=(storage.clock+1)%1000000
+	storage.clock=(storage.clock+1)%self.clockMax
 	if storage.wait~=nil and storage.wait==storage.clock then
 		storage.overflow=containerTryAdd(storage.overflow)
 		storage.wait=nil
@@ -92,7 +108,6 @@ function update(dt)
 		return
 	end
 	storage.overflow=containerTryAdd(storage.overflow)
-	--storage.overflow=containerTryAdd(storage.overflow)
 	if type(storage.overflow)~="table" then
 		local stack=world.containerItems(entity.id())
 		for _,value in pairs(self.recipes) do
@@ -138,7 +153,7 @@ function consumeItemsShaped(items, prod, stacks, delay) --In order
 	end
 	prod=treasure(prod)
 	if not(delay==nil or delay==0) then
-		storage.wait=(storage.clock+delay)%1000000
+		storage.wait=(storage.clock+delay)%self.clockMax
 		return prod
 	end
 	return containerAddItems(prod)
@@ -163,7 +178,7 @@ function consumeItems(items, prod, stack, delay) --No order
 	end
 	prod=treasure(prod)
 	if not(delay==nil or delay==0) then
-		storage.wait=(storage.clock+delay)%1000000
+		storage.wait=(storage.clock+delay)%self.clockMax
 		return prod
 	end
 	return containerAddItems(prod)
@@ -227,12 +242,12 @@ function deepcopy(orig)
 	local copy
 	if type(orig)=='table' then
 		copy={}
-		for orig_key, orig_value in next, orig, nil do
-			copy[deepcopy(orig_key)] =deepcopy(orig_value)
+		for orig_key,orig_value in next, orig, nil do
+			copy[deepcopy(orig_key)]=deepcopy(orig_value)
 		end
 		setmetatable(copy, deepcopy(getmetatable(orig)))
 	else
-		copy=orig
+		return orig
 	end
 	return copy
 end
