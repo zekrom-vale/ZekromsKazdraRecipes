@@ -8,52 +8,59 @@ function init()
 	self.recipes=root.assetJson(config.getParameter("recipefile"),nil)
 	if self.recipes==nil then
 		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logError("No recipe file defined for "..sb.name())
+		sb.logError("No recipe file defined for "..sbName())
 	end
 	if self.input[3]~=nil or self.output[3]~=nil then
 		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logInfo("Input/output array is not 2 elements for "..sb.name()..".  Ignoring the other ones")
+		sb.logInfo("Input/output array is not 2 elements for "..sbName()..".  Ignoring the other ones")
 	end
 	if self.input[1]>self.input[2] then
 		local t=self.input[2]
 		self.input[1]=self.input[2]
 		self.input[2]=t
-		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logInfo("Input values swapped, please use [small, large] for "..sb.name())
 		t=nil
+		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+		sb.logInfo("Input values swapped, please use [small, large] for "..sbName())
 	end
 	if self.output[1]>self.output[2] then
 		local t=self.output[2]
 		self.output[1]=self.output[2]
 		self.output[2]=t
-		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-		sb.logInfo("Output values swapped, please use [small, large] for "..sb.name())
 		t=nil
+		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+		sb.logInfo("Output values swapped, please use [small, large] for "..sbName())
 	end
 	for key,value in pairs(self.recipes) do
 		if value.input==nil or value.output==nil then
 			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-			sb.logWarn("Input/output missing for "..sb.name())
+			sb.logWarn("Input/output missing for "..sbName())
 			sb.logWarn(sb.printJson(value,1))
 			table.remove(self.recipes, key)
 			key=key-1
 			goto testEnd
 		elseif #value.input>self.input[2]-self.input[1]+1 then
 			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-			sb.logWarn("Input overflow in "..sb.name())
+			sb.logWarn("Input overflow in "..sbName())
 			sb.logWarn(sb.printJson(value,1))
 			table.remove(self.recipes, key)
 			key=key-1
 			goto testEnd
 		elseif #value.output>self.output[2]-self.output[1]+1 then
-			sb.logInfo("Output overflow in "..sb.name())
+			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+			sb.logInfo("Output overflow in "..sbName())
 			sb.logInfo(sb.printJson(value,1))
+		end
+		if value.delay~=nil and value.delay%1~=0 then
+			sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
+			sb.logInfo("Dellay is not an int in "..sbName())
+			sb.logInfo(sb.printJson(value,1))
+			value.delay=math.floor(value.delay)
 		end
 		for _,out in pairs(value.output) do
 			if out.pool==nil then	break	end
 			if root.isTreasurePool(out.pool)==false then
 				sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
-				sb.logWarn("Invalid pool in "..sb.name())
+				sb.logWarn("Invalid pool in "..sbName())
 				sb.logWarn(sb.printJson(value,1))
 				table.remove(self.recipes, key)
 				key=key-1
@@ -64,7 +71,7 @@ function init()
 	end
 end
 
-function sb.name()
+function sbName()
 	local name=config.getParameter("objectName")
 	if name~=nil then
 		local name=config.getParameter("itemName")
@@ -118,16 +125,16 @@ function containerAddItems(items)
 	return arr
 end
 
-function consumeItemsShaped(items, prod, stack, delay) --In order
-	for key,value in pairs(items) do
-		local value2=stack[key+self.input[1]-1]
-		if value2==nil then	return false	end
-		if not(value["name"]==value2["name"] and value["count"]<=value2["count"]) then
+function consumeItemsShaped(items, prod, stacks, delay) --In order
+	for key,item in pairs(items) do
+		local stack=stacks[key+self.input[1]-1]
+		if stack==nil then	return false	end
+		if not(item["name"]==stack["name"] and item["count"]<=stack["count"]) then
 			return false
 		end
 	end
-	for _,value in pairs(items) do
-		containerConsumeAt(value, self.input)
+	for _,item in pairs(items) do
+		containerConsumeAt(item, self.input)
 	end
 	prod=treasure(prod)
 	if not(delay==nil or delay==0) then
@@ -151,8 +158,8 @@ function consumeItems(items, prod, stack, delay) --No order
 		end
 		::skip::
 	end
-	for _,value in pairs(items) do
-		containerConsumeAt(value, self.input)
+	for _,item in pairs(items) do
+		containerConsumeAt(item, self.input)
 	end
 	prod=treasure(prod)
 	if not(delay==nil or delay==0) then
@@ -166,7 +173,7 @@ function treasure(pass)
 	local items=deepcopy(pass)
 	for key,item in pairs(items) do
 		if item.pool~=nil then
-			local pool=root.createTreasure(item.pool, item.level or 0, math.randomseed(storage.clock))
+			local pool=root.createTreasure(item.pool, item.level or 0)
 			table.remove(items, key)
 			key=key-1
 			for _,val in pairs(pool) do
@@ -178,9 +185,12 @@ function treasure(pass)
 end
 
 function die()
+	local drop=config.getParameter("drop", "all")
 	local poz=entity.position()
-	for _,item in storage.overflow do
-		world.spawnItem(item.name, poz, item.count)
+	if drop=="all" then
+		for _,item in pairs(storage.overflow) do
+			world.spawnItem(item.name, poz, item.count)
+		end
 	end
 end
 
