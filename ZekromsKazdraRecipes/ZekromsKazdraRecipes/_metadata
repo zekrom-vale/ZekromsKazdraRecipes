@@ -6,7 +6,7 @@
   "includes" : ["FrackinUniverse"],
   "link" : "steam://url/CommunityFilePage/1263719031",
   "name" : "ZekromsKazdraRecipes",
-  "requires" : ["kazdrareloaded"],
+  "requires" : ["kazdrareloaded","ZekromsCraftingAPI"],
   "steamContentId" : "1263719031",
   "tags" : "Furniture and Objects",
   "version" : "0.1.3.2"
