@@ -21,9 +21,9 @@
 }/*,{
 "op":"add",
 "path":"/recipeGroup",
-"value":"kazfalls"//Unnecessary as we use a custom crafting API
+"value":"kazfalls"//Unnecessary as we use my custom crafting API
 }*/
-//==================
+//==================  STUFF TO ADD  ==================
 ,{
 "op":"add",
 "path":"/scripts",
@@ -34,18 +34,15 @@
 "value":25//Change this to modify the clock interval (as well as how often the script runs)
 },{
 "op":"add",
-"path":"/recipefile",
-"value":"/objects/kazdra/kazfalls/kazfalls.config"//Points to the recipe JSON file
-},{
-"op":"add",
-"path":"/input",
-"value":[1,2]//Input slots inclusive (container slot 1 is 1)
-},{
-"op":"add",
-"path":"/output",
-"value":[3,3]//Output slots inclusive (container slot 1 is 1)
+"path":"/multicraftAPI",
+"value":{
+	"input":[1,2],//Input slots inclusive (container slot 1 is 1)
+	"output":[3,3],//Output slots inclusive (container slot 1 is 1)
+	"recipefile":"/objects/kazdra/kazfalls/kazfalls.config",//Points to the recipe JSON file
+	"drop":"all"//Behavior of overflow when broken
+}
 },
-//==================
+//================  STUFF TO ADD END  ================
 {
 "op":"add",
 "path":"/openSounds",

@@ -3,9 +3,9 @@ function init()
 		storage.clock=0
 	end
 	local size=world.containerSize(entity.id())
-	self.input=config.getParameter("input", {1, size})
-	self.output=config.getParameter("output", {1, size})
-	self.recipes=root.assetJson(config.getParameter("recipefile"),nil)
+	self.input=config.getParameter("multicraftAPI.input", {1, size})
+	self.output=config.getParameter("multicraftAPI.output", {1, size})
+	self.recipes=root.assetJson(config.getParameter("multicraftAPI.recipefile"),nil)
 	if self.recipes==nil then
 		sb.logInfo("---  API mod: \"ZekromsMulticraftAPI\"  ---")
 		sb.logError("No recipe file defined for "..sbName())
@@ -185,7 +185,7 @@ function treasure(pass)
 end
 
 function die()
-	local drop=config.getParameter("drop", "all")
+	local drop=config.getParameter("multicraftAPI.drop", "all")
 	local poz=entity.position()
 	if drop=="all" then
 		for _,item in pairs(storage.overflow) do
