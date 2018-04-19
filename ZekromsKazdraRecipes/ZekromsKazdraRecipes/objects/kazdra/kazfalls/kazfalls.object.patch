@@ -36,10 +36,13 @@
 "op":"add",
 "path":"/multicraftAPI",
 "value":{
-	"input":[1,2],//Input slots inclusive (container slot 1 is 1)
-	"output":[3,3],//Output slots inclusive (container slot 1 is 1)
+	//(container slot 1 is 1)
+	"input":[1,2],//Input slots inclusive
+	"output":[3,3],//Output slots inclusive
 	"recipefile":"/objects/kazdra/kazfalls/kazfalls.config",//Points to the recipe JSON file
-	"drop":"all"//Behavior of overflow when broken
+	"drop":"all"// or `number` //Behavior of overflow when broken
+	//^Positive numbers round up negative numbers round down
+	//,"killStorage":true//Defines that the storage overflow (The overflow when items are crafted) should be killed
 }
 },
 //================  STUFF TO ADD END  ================
