@@ -9,7 +9,7 @@
 },//Parts
 {
 "op":"add",
-"path":"/parts",
+"path":"/parts/-",
 "value":{
 	"name":"merchantkaz",
 	"rules":[["maxSpawnCount",[1]]],
@@ -17,7 +17,7 @@
 }
 },{
 "op":"add",
-"path":"/parts",
+"path":"/parts/-",
 "value":{
 	"name":"merchantkazGem",
 	"rules":[["maxSpawnCount",[1]]],

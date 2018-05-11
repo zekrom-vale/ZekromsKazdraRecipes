@@ -1,0 +1,69 @@
+[{
+"op":"add",
+"path":"/objectType",
+"value":"container"
+},{
+"op":"add",
+"path":"/health",
+"value":1.5
+},{
+"op":"add",
+"path":"/soundEffect",
+"value":"/sfx/objects/campfire.ogg"
+},{
+"op":"add",
+"path":"/soundEffectRangeMultiplier",
+"value":0.5
+},{
+"op":"add",
+"path":"/statusEffects",
+"value":[]
+}/*,{
+"op":"add",
+"path":"/recipeGroup",
+"value":"kazfalls"//Unnecessary as we use my custom crafting API
+}*/
+//==================  STUFF TO ADD  ==================
+,{
+"op":"add",
+"path":"/scripts",
+"value":["/scripts/multicraft.lua"]//Point to the crafting script
+},{
+"op":"add",
+"path":"/scriptDelta",
+"value":25//Change this to modify the clock interval (as well as how often the script runs)
+},{
+"op":"add",
+"path":"/multicraftAPI",
+"value":{
+	//(container slot 1 is 1)
+	"input":[1,2],//Input slots inclusive
+	"output":[3,3],//Output slots inclusive
+	"recipefile":"/objects/kazdra/kazfalls/kazfalls.config",//Points to the recipe JSON file
+	"drop":"all"// or `number` //Behavior of overflow when broken
+	//^Positive numbers round up negative numbers round down
+	//,"killStorage":true//Defines that the storage overflow (The overflow when items are crafted) should be killed
+}
+},
+//================  STUFF TO ADD END  ================
+{
+"op":"add",
+"path":"/openSounds",
+"value":[ "/sfx/objects/campfire_use.ogg" ]
+},{
+"op":"add",
+"path":"/slotCount",
+"value":3//MUST change this to obey "uiConfig"
+},{
+"op":"add",
+"path":"/uiConfig",
+"value":"/interface/objectcrafting/kazfalls.config"//Indicates how to display the UI
+},{
+"op":"add",
+"path":"/frameCooldown",
+"value":5
+},{
+"op":"add",
+"path":"/autoCloseCooldown",
+"value":3600
+}]
